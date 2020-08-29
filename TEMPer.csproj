@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!--Project was exported from assembly: D:\Program\Tempr\TEMPer.exe-->
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8932D528-0C9E-4B88-A767-18424851BB57}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AssemblyName>TEMPer</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+    <ApplicationVersion>1.0.0.0</ApplicationVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AxInterop.TeeChart">
+      <HintPath>lib\AxInterop.TeeChart.dll</HintPath>
+    </Reference>
+    <Reference Include="AxInterop.WMPLib">
+      <HintPath>lib\AxInterop.WMPLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.TeeChart">
+      <HintPath>lib\Interop.TeeChart.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.WMPLib">
+      <HintPath>lib\Interop.WMPLib.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ProtocolRegisteredKey.cs" />
+    <Compile Include="ProtocolLoginKey.cs" />
+    <Compile Include="ProtocolConfigKey.cs" />
+    <Compile Include="ProtocolKeys.cs" />
+    <Compile Include="ProtocolFlags.cs" />
+    <Compile Include="TEMPer\EmailForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TEMPer\RemoteForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TEMPer\EmailHelp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TEMPer\AlarmForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TEMPer\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TEMPer\IntroduceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TEMPer\RegistForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TEMPer\RDing.cs" />
+    <Compile Include="TEMPer\DESEncrypt.cs" />
+    <Compile Include="TEMPer\AboutForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TEMPer\SetLanguage.cs" />
+    <Compile Include="TEMPer\SetForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TEMPer\DESncrypt.cs" />
+    <Compile Include="TEMPer\AssemblyInDataParser.cs" />
+    <Compile Include="TEMPer\IpDAL.cs" />
+    <Compile Include="TEMPer\AutoSizeFormClass.cs" />
+    <Compile Include="TEMPer\PubMethod.cs" />
+    <Compile Include="TEMPer\HttpPostHelp.cs" />
+    <Compile Include="TEMPer\Program.cs" />
+    <Compile Include="TEMPer\Properties\Settings.cs" />
+    <Compile Include="TEMPer\Properties\Resources.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TEMPer\AboutForm.resx" />
+    <EmbeddedResource Include="TEMPer\AlarmForm.resx" />
+    <EmbeddedResource Include="TEMPer\EmailForm.resx" />
+    <EmbeddedResource Include="TEMPer\EmailHelp.resx" />
+    <EmbeddedResource Include="TEMPer\IntroduceForm.resx" />
+    <EmbeddedResource Include="TEMPer\MainForm.resx" />
+    <EmbeddedResource Include="TEMPer\Properties\Resources.resx" />
+    <EmbeddedResource Include="TEMPer\RegistForm.resx" />
+    <EmbeddedResource Include="TEMPer\RemoteForm.resx" />
+    <EmbeddedResource Include="TEMPer\SetForm.resx" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
