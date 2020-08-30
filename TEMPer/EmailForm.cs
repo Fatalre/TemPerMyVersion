@@ -116,39 +116,39 @@ namespace TEMPer
       string text9 = this.subjecTB.Text;
       string text10 = this.contentTB.Text;
       string text11 = this.sendInterval.Text;
-      string str1 = Settings.Default.Language == 2 ? "Email state" : "当前邮件状态：";
+      string str1 = Settings.Default.Language == 2 ? "Email state" : "Текущий статус почты: ";
       string str2;
       if (this.startRtn.Checked)
       {
-        str2 = str1 + (Settings.Default.Language == 2 ? "ON" : "开启");
+        str2 = str1 + (Settings.Default.Language == 2 ? "ON" : "Включен");
         if (string.IsNullOrEmpty(text1))
         {
-          int num = (int) MessageBox.Show(Settings.Default.Language == 2 ? "The email account cannot be empty" : "发送邮箱账号不能为空");
+          int num = (int) MessageBox.Show(Settings.Default.Language == 2 ? "The email account cannot be empty" : "Учетная запись электронной почты отправителя не может быть пустой");
           return;
         }
         if (string.IsNullOrEmpty(text2))
         {
-          int num = (int) MessageBox.Show(Settings.Default.Language == 2 ? "The mailbox password cannot be empty" : "发送邮箱密码不能为空");
+          int num = (int) MessageBox.Show(Settings.Default.Language == 2 ? "The mailbox password cannot be empty" : "Пароль электронной почты не может быть пустым");
           return;
         }
         if (string.IsNullOrEmpty(text3))
         {
-          int num = (int) MessageBox.Show(Settings.Default.Language == 2 ? "Send mailbox SMTP cannot be empty" : "发送邮箱SMTP不能为空");
+          int num = (int) MessageBox.Show(Settings.Default.Language == 2 ? "Send mailbox SMTP cannot be empty" : "Отправляющий почтовый ящик SMTP не может быть пустым");
           return;
         }
         if (string.IsNullOrEmpty(text4))
         {
-          int num = (int) MessageBox.Show(Settings.Default.Language == 2 ? "The mailbox port cannot be empty" : "发送邮箱端口不能为空");
+          int num = (int) MessageBox.Show(Settings.Default.Language == 2 ? "The mailbox port cannot be empty" : "Порт почтового ящика отправителя не может быть пустым");
           return;
         }
         if (string.IsNullOrEmpty(text7) && string.IsNullOrEmpty(text8))
         {
-          int num = (int) MessageBox.Show(Settings.Default.Language == 2 ? "Fill in at least one mailbox" : "接收邮箱至少填写一个");
+          int num = (int) MessageBox.Show(Settings.Default.Language == 2 ? "Fill in at least one mailbox" : "Заполните хотя бы один почтовый ящик получателя");
           return;
         }
       }
       else
-        str2 = str1 + (Settings.Default.Language == 2 ? "OFF" : "关闭");
+        str2 = str1 + (Settings.Default.Language == 2 ? "OFF" : "Выключен");
       Settings.Default.SendAccount = text1;
       Settings.Default.SendInterval = int.Parse(text11);
       Settings.Default.SendPass = text2;
@@ -164,7 +164,7 @@ namespace TEMPer
       Settings.Default.Content = text10;
       Settings.Default.Save();
       this.mf.changeEmail(str2);
-      int num1 = (int) MessageBox.Show(Settings.Default.Language == 2 ? "Set success" : "保存成功");
+      int num1 = (int) MessageBox.Show(Settings.Default.Language == 2 ? "Set success" : "Успешно установлено");
     }
 
     private void SSLCK_CheckedChanged(object sender, EventArgs e)

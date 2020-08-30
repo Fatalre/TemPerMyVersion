@@ -133,14 +133,15 @@
   <data name="label3.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="smtpTB.Size" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABNTeXN0ZW0uRHJhd2luZy5TaXplAgAAAAV3aWR0aAZoZWlnaHQAAAgIAgAAAPgAAAAXAAAACw==</value>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="smtpTB.Size" type="System.Drawing.Size, System.Drawing">
+    <value>248, 23</value>
   </data>
-  <data name="panel1.Size" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABNTeXN0ZW0uRHJhd2luZy5TaXplAgAAAAV3aWR0aAZoZWlnaHQAAAgIAgAAAAkDAAAOAgAACw==</value>
+  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>777, 526</value>
   </data>
-  <data name="endRtn.Location" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABRTeXN0ZW0uRHJhd2luZy5Qb2ludAIAAAABeAF5AAAICAIAAAB6AAAAKAAAAAs=</value>
+  <data name="endRtn.Location" type="System.Drawing.Point, System.Drawing">
+    <value>122, 40</value>
   </data>
   <data name="&gt;&gt;sendPassTB.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -157,14 +158,14 @@
   <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
-  <data name="saveBtn.Location" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABRTeXN0ZW0uRHJhd2luZy5Qb2ludAIAAAABeAF5AAAICAIAAABYAgAAsgEAAAs=</value>
+  <data name="saveBtn.Location" type="System.Drawing.Point, System.Drawing">
+    <value>600, 434</value>
   </data>
-  <data name="label12.Size" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABNTeXN0ZW0uRHJhd2luZy5TaXplAgAAAAV3aWR0aAZoZWlnaHQAAAgIAgAAADgAAAARAAAACw==</value>
+  <data name="label12.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 17</value>
   </data>
   <data name="label12.Text" xml:space="preserve">
-    <value>报警邮件</value>
+    <value>Аварийная почта</value>
   </data>
   <data name="&gt;&gt;label5.Parent" xml:space="preserve">
     <value>groupBox2</value>
@@ -178,20 +179,20 @@
   <data name="startRtn.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="sendAccountTB.Location" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABRTeXN0ZW0uRHJhd2luZy5Qb2ludAIAAAABeAF5AAAICAIAAABPAAAAIAAAAAs=</value>
+  <data name="sendAccountTB.Location" type="System.Drawing.Point, System.Drawing">
+    <value>79, 32</value>
   </data>
   <data name="label10.Text" xml:space="preserve">
-    <value>内容：</value>
+    <value>Содержание:</value>
   </data>
-  <data name="label10.Size" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABNTeXN0ZW0uRHJhd2luZy5TaXplAgAAAAV3aWR0aAZoZWlnaHQAAAgIAgAAACwAAAARAAAACw==</value>
+  <data name="label10.Size" type="System.Drawing.Size, System.Drawing">
+    <value>44, 17</value>
   </data>
   <data name="&gt;&gt;groupBox3.Parent" xml:space="preserve">
     <value>panel1</value>
   </data>
-  <data name="closePic.Size" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABNTeXN0ZW0uRHJhd2luZy5TaXplAgAAAAV3aWR0aAZoZWlnaHQAAAgIAgAAABQAAAAUAAAACw==</value>
+  <data name="closePic.Size" type="System.Drawing.Size, System.Drawing">
+    <value>20, 20</value>
   </data>
   <data name="&gt;&gt;smtpTB.Parent" xml:space="preserve">
     <value>groupBox1</value>
@@ -202,23 +203,23 @@
   <data name="&gt;&gt;label8.Parent" xml:space="preserve">
     <value>groupBox2</value>
   </data>
-  <data name="label13.Font" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABNTeXN0ZW0uRHJhd2luZy5Gb250BAAAAAROYW1lBFNpemUFU3R5bGUEVW5pdAEABAQLGFN5c3RlbS5EcmF3aW5nLkZvbnRTdHlsZQIAAAAbU3lzdGVtLkRyYXdpbmcuR3JhcGhpY3NVbml0AgAAAAIAAAAGAwAAAAzlvq7ova/pm4Xpu5EAABBBBfz///8YU3lzdGVtLkRyYXdpbmcuRm9udFN0eWxlAQAAAAd2YWx1ZV9fAAgCAAAAAQAAAAX7////G1N5c3RlbS5EcmF3aW5nLkdyYXBoaWNzVW5pdAEAAAAHdmFsdWVfXwAIAgAAAAMAAAAL</value>
+  <data name="label13.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei, 9pt, style=Bold</value>
   </data>
-  <data name="label13.Size" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABNTeXN0ZW0uRHJhd2luZy5TaXplAgAAAAV3aWR0aAZoZWlnaHQAAAgIAgAAACAAAAARAAAACw==</value>
+  <data name="label13.Size" type="System.Drawing.Size, System.Drawing">
+    <value>32, 17</value>
   </data>
   <data name="label13.Text" xml:space="preserve">
-    <value>帮助</value>
+    <value>Помогите</value>
   </data>
-  <data name="reciveAccountTB1.Location" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABRTeXN0ZW0uRHJhd2luZy5Qb2ludAIAAAABeAF5AAAICAIAAABWAAAARAAAAAs=</value>
+  <data name="reciveAccountTB1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>86, 68</value>
   </data>
   <data name="label11.Text" xml:space="preserve">
-    <value>（单位：分）</value>
+    <value>(Единица: минуты)</value>
   </data>
-  <data name="label11.Size" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABNTeXN0ZW0uRHJhd2luZy5TaXplAgAAAAV3aWR0aAZoZWlnaHQAAAgIAgAAAFAAAAARAAAACw==</value>
+  <data name="label11.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 17</value>
   </data>
   <data name="&gt;&gt;smtpTB.ZOrder" xml:space="preserve">
     <value>2</value>
@@ -232,14 +233,28 @@
   <data name="&gt;&gt;reciveAccountTB2.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="$this.Icon" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABNTeXN0ZW0uRHJhd2luZy5JY29uAgAAAAhJY29uRGF0YQhJY29uU2l6ZQcEAhNTeXN0ZW0uRHJhd2luZy5TaXplAgAAAAIAAAAJAwAAAAX8////E1N5c3RlbS5EcmF3aW5nLlNpemUCAAAABXdpZHRoBmhlaWdodAAACAgCAAAAAAAAAAAAAAAPAwAAAP4CAAACAAABAAEAICAQAAAABADoAgAAFgAAACgAAAAgAAAAQAAAAAEABAAAAAAAAAIAAAAAAAAAAAAAEAAAABAAAAAAAAAAAACAAACAAAAAgIAAgAAAAIAAgACAgAAAgICAAMDAwAAAAP8AAP8AAAD//wD/AAAA/wD/AP//AAD///8ABmZmZmZmZmZmZmZmZmZmYAqqqqqqqqqqqqqqqqqqqqAKqqqqqqqqqqqqqqqqqqqgCqqqqqqqqqqqqqqqqqqqoAqqqqqqqqAAAAAACqqqqqAKqqqqqqoAAAAAAAAKqqqgCqqqqqqgAAAAAAAAAKqqoAqqqqqqoAAAqqqqAAAKqqAGZmZmZgAAZmZmZmYABmZgCZmZmZkAAJmZmZmZkAmZkAmZmZmQAAmZmZmZmZmZmZAJmZmZkAAJmZmZmZmZmZmQCZmZmQAAmZmZmZmZmZmZkAmZmZkAAJmZmZmZmZmZmZAJmZmZAACZmZmZmZmZmZmQCZmZmQAAmZmZmZmZmZmZkAmZmZkAAJmZmZmZmZmZmZAAAGZmAABmZmZmZmZmZmZgC7u7uwAAu7u7u7u7u7u7sAu7u7sAALu7u7u7u7u7u7ALu7u7AAC7u7u7u7uwALuwC7u7u7AAC7u7u7u7sAC7sGu7AAC7AAu7u7u7u7AAu7BrsAAACwAAu7u7u7uwALuwa7ALsAuwALu7u7u7AAC7sGYABmAGZgAAZmZmYAAAZmYP8A/wD//wAAD/AAAA///2D/8AAA////AAAAAAD///8A//AAD////wAAAA//////AP//////////AA///////2D///////////////////8AAAAAAAAAAAAAAAAAAAAACAAAABgAAAAYAAAAGAAAABgAAAAYAAAAGAAAABgAAAAYAAAAGAAAABgAAAAYAAAAGAAAABgAAAAYAAAAGAAAABgAAAAfAAAAGAAAABgAAAAYAAAAGAAAABAAAAAQAAAAEAAAABIAAAAIAAAACAAAABgAAAAYAAAACAAAAB/////ws=</value>
+  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAEAICAQAAAABADoAgAAFgAAACgAAAAgAAAAQAAAAAEABAAAAAAAAAIAAAAAAAAAAAAAEAAAABAA
+        AAAAAAAAAACAAACAAAAAgIAAgAAAAIAAgACAgAAAgICAAMDAwAAAAP8AAP8AAAD//wD/AAAA/wD/AP//
+        AAD///8ABmZmZmZmZmZmZmZmZmZmYAqqqqqqqqqqqqqqqqqqqqAKqqqqqqqqqqqqqqqqqqqgCqqqqqqq
+        qqqqqqqqqqqqoAqqqqqqqqAAAAAACqqqqqAKqqqqqqoAAAAAAAAKqqqgCqqqqqqgAAAAAAAAAKqqoAqq
+        qqqqoAAAqqqqAAAKqqAGZmZmZgAAZmZmZmYABmZgCZmZmZkAAJmZmZmZkAmZkAmZmZmQAAmZmZmZmZmZ
+        mZAJmZmZkAAJmZmZmZmZmZmQCZmZmQAAmZmZmZmZmZmZkAmZmZkAAJmZmZmZmZmZmZAJmZmZAACZmZmZ
+        mZmZmZmQCZmZmQAAmZmZmZmZmZmZkAmZmZkAAJmZmZmZmZmZmZAAAGZmAABmZmZmZmZmZmZgC7u7uwAA
+        u7u7u7u7u7u7sAu7u7sAALu7u7u7u7u7u7ALu7u7AAC7u7u7u7uwALuwC7u7u7AAC7u7u7u7sAC7sGu7
+        AAC7AAu7u7u7u7AAu7BrsAAACwAAu7u7u7uwALuwa7ALsAuwALu7u7u7AAC7sGYABmAGZgAAZmZmYAAA
+        ZmYP8A/wD//wAAD/AAAA///2D/8AAA////AAAAAAD///8A//AAD////wAAAA//////AP//////////AA
+        ///////2D///////////////////8AAAAAAAAAAAAAAAAAAAAACAAAABgAAAAYAAAAGAAAABgAAAAYAA
+        AAGAAAABgAAAAYAAAAGAAAABgAAAAYAAAAGAAAABgAAAAYAAAAGAAAABgAAAAfAAAAGAAAABgAAAAYAA
+        AAGAAAABAAAAAQAAAAEAAAABIAAAAIAAAACAAAABgAAAAYAAAACAAAAB/////w==
+</value>
   </data>
-  <data name="$this.Font" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABNTeXN0ZW0uRHJhd2luZy5Gb250BAAAAAROYW1lBFNpemUFU3R5bGUEVW5pdAEABAQLGFN5c3RlbS5EcmF3aW5nLkZvbnRTdHlsZQIAAAAbU3lzdGVtLkRyYXdpbmcuR3JhcGhpY3NVbml0AgAAAAIAAAAGAwAAAAzlvq7ova/pm4Xpu5EAABBBBfz///8YU3lzdGVtLkRyYXdpbmcuRm9udFN0eWxlAQAAAAd2YWx1ZV9fAAgCAAAAAAAAAAX7////G1N5c3RlbS5EcmF3aW5nLkdyYXBoaWNzVW5pdAEAAAAHdmFsdWVfXwAIAgAAAAMAAAAL</value>
+  <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei, 9pt</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>报警邮件</value>
+    <value>Аварийная почта</value>
   </data>
   <data name="&gt;&gt;label6.Parent" xml:space="preserve">
     <value>groupBox2</value>
@@ -268,11 +283,11 @@
   <data name="contentTB.Text" xml:space="preserve">
     <value />
   </data>
-  <data name="contentTB.Size" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABNTeXN0ZW0uRHJhd2luZy5TaXplAgAAAAV3aWR0aAZoZWlnaHQAAAgIAgAAAHwCAAB2AAAACw==</value>
+  <data name="contentTB.Size" type="System.Drawing.Size, System.Drawing">
+    <value>636, 118</value>
   </data>
-  <data name="label7.Location" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABRTeXN0ZW0uRHJhd2luZy5Qb2ludAIAAAABeAF5AAAICAIAAAARAAAAbQAAAAs=</value>
+  <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
+    <value>17, 109</value>
   </data>
   <data name="&gt;&gt;SSLCK.ZOrder" xml:space="preserve">
     <value>0</value>
@@ -280,8 +295,8 @@
   <data name="label3.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="label10.Location" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABRTeXN0ZW0uRHJhd2luZy5Qb2ludAIAAAABeAF5AAAICAIAAAAeAAAASQAAAAs=</value>
+  <data name="label10.Location" type="System.Drawing.Point, System.Drawing">
+    <value>30, 73</value>
   </data>
   <data name="sendPassTB.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -301,17 +316,18 @@
   <data name="&gt;&gt;portTB.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="$this.ClientSize" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABNTeXN0ZW0uRHJhd2luZy5TaXplAgAAAAV3aWR0aAZoZWlnaHQAAAgIAgAAAAsDAAA3AgAACw==</value>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>779, 567</value>
   </data>
-  <data name="sendInterval.TextAlign" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAAChTeXN0ZW0uV2luZG93cy5Gb3Jtcy5Ib3Jpem9udGFsQWxpZ25tZW50AQAAAAd2YWx1ZV9fAAgCAAAAAgAAAAs=</value>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="sendInterval.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
   </data>
-  <data name="startRtn.Location" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABRTeXN0ZW0uRHJhd2luZy5Qb2ludAIAAAABeAF5AAAICAIAAAAWAAAAKAAAAAs=</value>
+  <data name="startRtn.Location" type="System.Drawing.Point, System.Drawing">
+    <value>22, 40</value>
   </data>
-  <data name="alarmSend.Location" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABRTeXN0ZW0uRHJhd2luZy5Qb2ludAIAAAABeAF5AAAICAIAAAAXAAAAGwAAAAs=</value>
+  <data name="alarmSend.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 27</value>
   </data>
   <data name="label4.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -322,8 +338,8 @@
   <data name="&gt;&gt;startRtn.Parent" xml:space="preserve">
     <value>groupBox5</value>
   </data>
-  <data name="$this.Margin" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAABxTeXN0ZW0uV2luZG93cy5Gb3Jtcy5QYWRkaW5nBQAAAARfYWxsBF90b3AFX2xlZnQGX3JpZ2h0B19ib3R0b20AAAAAAAEICAgIAgAAAAAEAAAAAwAAAAMAAAAEAAAACw==</value>
+  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 4, 3, 4</value>
   </data>
   <data name="&gt;&gt;continueSend.Type" xml:space="preserve">
     <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -334,95 +350,95 @@
   <data name="&gt;&gt;label13.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="label2.Size" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABNTeXN0ZW0uRHJhd2luZy5TaXplAgAAAAV3aWR0aAZoZWlnaHQAAAgIAgAAACwAAAARAAAACw==</value>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>44, 17</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
-    <value>密码：</value>
+    <value>Пароль:</value>
   </data>
-  <data name="subjecTB.Size" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABNTeXN0ZW0uRHJhd2luZy5TaXplAgAAAAV3aWR0aAZoZWlnaHQAAAgIAgAAAHwCAAAXAAAACw==</value>
+  <data name="subjecTB.Size" type="System.Drawing.Size, System.Drawing">
+    <value>636, 23</value>
   </data>
   <data name="label3.Text" xml:space="preserve">
     <value>SMTP：</value>
   </data>
-  <data name="label3.Size" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABNTeXN0ZW0uRHJhd2luZy5TaXplAgAAAAV3aWR0aAZoZWlnaHQAAAgIAgAAADUAAAARAAAACw==</value>
+  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>53, 17</value>
   </data>
   <data name="&gt;&gt;contentTB.Parent" xml:space="preserve">
     <value>groupBox3</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>账号：</value>
+    <value>Аккаунт:</value>
   </data>
-  <data name="label1.Size" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABNTeXN0ZW0uRHJhd2luZy5TaXplAgAAAAV3aWR0aAZoZWlnaHQAAAgIAgAAACwAAAARAAAACw==</value>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>44, 17</value>
   </data>
-  <data name="label6.Size" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABNTeXN0ZW0uRHJhd2luZy5TaXplAgAAAAV3aWR0aAZoZWlnaHQAAAgIAgAAADMAAAARAAAACw==</value>
+  <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>51, 17</value>
   </data>
   <data name="label6.Text" xml:space="preserve">
-    <value>账号1：</value>
+    <value>Счет 1:</value>
   </data>
   <data name="&gt;&gt;SSLCK.Parent" xml:space="preserve">
     <value>groupBox1</value>
   </data>
-  <data name="label7.Size" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABNTeXN0ZW0uRHJhd2luZy5TaXplAgAAAAV3aWR0aAZoZWlnaHQAAAgIAgAAAD8AAAARAAAACw==</value>
+  <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>63, 17</value>
   </data>
   <data name="label7.Text" xml:space="preserve">
-    <value>接收人2：</value>
+    <value>Получатель 2:</value>
   </data>
   <data name="&gt;&gt;label13.Parent" xml:space="preserve">
     <value>panel1</value>
   </data>
-  <data name="sendInterval.Location" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABRTeXN0ZW0uRHJhd2luZy5Qb2ludAIAAAABeAF5AAAICAIAAABwAAAAPgAAAAs=</value>
+  <data name="sendInterval.Location" type="System.Drawing.Point, System.Drawing">
+    <value>112, 62</value>
   </data>
   <data name="groupBox4.Text" xml:space="preserve">
-    <value>发送方式</value>
+    <value>Способ отправки</value>
   </data>
-  <data name="groupBox4.Size" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABNTeXN0ZW0uRHJhd2luZy5TaXplAgAAAAV3aWR0aAZoZWlnaHQAAAgIAgAAAEcBAABhAAAACw==</value>
+  <data name="groupBox4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>327, 97</value>
   </data>
-  <data name="label4.Size" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABNTeXN0ZW0uRHJhd2luZy5TaXplAgAAAAV3aWR0aAZoZWlnaHQAAAgIAgAAACwAAAARAAAACw==</value>
+  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>44, 17</value>
   </data>
   <data name="label4.Text" xml:space="preserve">
-    <value>端口：</value>
+    <value>Порт:</value>
   </data>
   <data name="&gt;&gt;saveBtn.Parent" xml:space="preserve">
     <value>panel1</value>
   </data>
   <data name="groupBox5.Text" xml:space="preserve">
-    <value>邮件启动</value>
+    <value>Начало почты</value>
   </data>
-  <data name="groupBox5.Size" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABNTeXN0ZW0uRHJhd2luZy5TaXplAgAAAAV3aWR0aAZoZWlnaHQAAAgIAgAAAMgAAABhAAAACw==</value>
+  <data name="groupBox5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 97</value>
   </data>
   <data name="label5.Text" xml:space="preserve">
-    <value>接收人1：</value>
+    <value>Получатель 1:</value>
   </data>
-  <data name="label5.Size" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABNTeXN0ZW0uRHJhd2luZy5TaXplAgAAAAV3aWR0aAZoZWlnaHQAAAgIAgAAAD8AAAARAAAACw==</value>
+  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>63, 17</value>
   </data>
-  <data name="groupBox2.Size" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABNTeXN0ZW0uRHJhd2luZy5TaXplAgAAAAV3aWR0aAZoZWlnaHQAAAgIAgAAAGQBAAC6AAAACw==</value>
+  <data name="groupBox2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>356, 186</value>
   </data>
   <data name="groupBox2.Text" xml:space="preserve">
-    <value>接收邮箱</value>
+    <value>Получение почтового ящика</value>
   </data>
-  <data name="label8.Location" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABRTeXN0ZW0uRHJhd2luZy5Qb2ludAIAAAABeAF5AAAICAIAAAAdAAAAkQAAAAs=</value>
+  <data name="label8.Location" type="System.Drawing.Point, System.Drawing">
+    <value>29, 145</value>
   </data>
-  <data name="label12.Location" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABRTeXN0ZW0uRHJhd2luZy5Qb2ludAIAAAABeAF5AAAICAIAAAAPAAAADAAAAAs=</value>
+  <data name="label12.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 12</value>
   </data>
-  <data name="groupBox3.Size" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABNTeXN0ZW0uRHJhd2luZy5TaXplAgAAAAV3aWR0aAZoZWlnaHQAAAgIAgAAAOECAADFAAAACw==</value>
+  <data name="groupBox3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>737, 197</value>
   </data>
   <data name="groupBox3.Text" xml:space="preserve">
-    <value>发送内容</value>
+    <value>Отправить контент</value>
   </data>
   <data name="&gt;&gt;startRtn.Name" xml:space="preserve">
     <value>startRtn</value>
@@ -430,8 +446,8 @@
   <data name="&gt;&gt;startRtn.Type" xml:space="preserve">
     <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="reciveNameTB2.Size" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABNTeXN0ZW0uRHJhd2luZy5TaXplAgAAAAV3aWR0aAZoZWlnaHQAAAgIAgAAAPgAAAAXAAAACw==</value>
+  <data name="reciveNameTB2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>248, 23</value>
   </data>
   <data name="label8.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -440,37 +456,37 @@
     <value>1</value>
   </data>
   <data name="label8.Text" xml:space="preserve">
-    <value>账号2：</value>
+    <value>Счет 2:</value>
   </data>
-  <data name="label8.Size" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABNTeXN0ZW0uRHJhd2luZy5TaXplAgAAAAV3aWR0aAZoZWlnaHQAAAgIAgAAADMAAAARAAAACw==</value>
+  <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
+    <value>51, 17</value>
   </data>
-  <data name="label11.Location" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABRTeXN0ZW0uRHJhd2luZy5Qb2ludAIAAAABeAF5AAAICAIAAADuAAAAQAAAAAs=</value>
+  <data name="label11.Location" type="System.Drawing.Point, System.Drawing">
+    <value>238, 64</value>
   </data>
-  <data name="reciveNameTB1.Size" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABNTeXN0ZW0uRHJhd2luZy5TaXplAgAAAAV3aWR0aAZoZWlnaHQAAAgIAgAAAPgAAAAXAAAACw==</value>
+  <data name="reciveNameTB1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>248, 23</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
-    <value>发送邮箱</value>
+    <value>Отправить электронное письмо</value>
   </data>
-  <data name="groupBox1.Size" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABNTeXN0ZW0uRHJhd2luZy5TaXplAgAAAAV3aWR0aAZoZWlnaHQAAAgIAgAAAGQBAAC6AAAACw==</value>
+  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>356, 186</value>
   </data>
   <data name="&gt;&gt;startRtn.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="label9.Text" xml:space="preserve">
-    <value>主题：</value>
+    <value>Тема:</value>
   </data>
-  <data name="label9.Size" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABNTeXN0ZW0uRHJhd2luZy5TaXplAgAAAAV3aWR0aAZoZWlnaHQAAAgIAgAAACwAAAARAAAACw==</value>
+  <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
+    <value>44, 17</value>
   </data>
   <data name="sendAccountTB.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
-  <data name="contentTB.Location" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABRTeXN0ZW0uRHJhd2luZy5Qb2ludAIAAAABeAF5AAAICAIAAABPAAAARwAAAAs=</value>
+  <data name="contentTB.Location" type="System.Drawing.Point, System.Drawing">
+    <value>79, 71</value>
   </data>
   <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
     <value>2</value>
@@ -490,11 +506,16 @@
   <data name="&gt;&gt;label7.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="closePic.Image" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJAwAAAA8DAAAA6QAAAAKJUE5HDQoaCgAAAA1JSERSAAAAFAAAABQIBgAAAI2JHQ0AAAABc1JHQgCuzhzpAAAABGdBTUEAALGPC/xhBQAAAJNJREFUOE/tk0EOgCAMBHmKT/BJ/v8TlelCOCgpiCfjJMamzK56MP0kM9vLGBK6CPmCo6y64Ei1razuyUIVu6WcSYkf7CDKvwbY6WiwrEJAuRZk1mqyrEJQeb+vlVUoUI+zVgaUqMt57e3WP5mg8q2AWavJUgLKXYPsdDRYiii/H+BMSlCahSe/Xvw/lzFkxv0sKZ21hP+BX+cw/QAAAABJRU5ErkJgggs=</value>
+  <data name="closePic.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAJNJREFUOE/t
+        k0EOgCAMBHmKT/BJ/v8TlelCOCgpiCfjJMamzK56MP0kM9vLGBK6CPmCo6y64Ei1razuyUIVu6WcSYkf
+        7CDKvwbY6WiwrEJAuRZk1mqyrEJQeb+vlVUoUI+zVgaUqMt57e3WP5mg8q2AWavJUgLKXYPsdDRYiii/
+        H+BMSlCahSe/Xvw/lzFkxv0sKZ21hP+BX+cw/QAAAABJRU5ErkJggg==
+</value>
   </data>
-  <data name="groupBox4.Location" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABRTeXN0ZW0uRHJhd2luZy5Qb2ludAIAAAABeAF5AAAICAIAAAAUAAAAmQEAAAs=</value>
+  <data name="groupBox4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 409</value>
   </data>
   <data name="&gt;&gt;label9.Parent" xml:space="preserve">
     <value>groupBox3</value>
@@ -523,8 +544,8 @@
   <data name="&gt;&gt;endRtn.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="sendPassTB.Location" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABRTeXN0ZW0uRHJhd2luZy5Qb2ludAIAAAABeAF5AAAICAIAAABPAAAARAAAAAs=</value>
+  <data name="sendPassTB.Location" type="System.Drawing.Point, System.Drawing">
+    <value>79, 68</value>
   </data>
   <data name="&gt;&gt;endRtn.Parent" xml:space="preserve">
     <value>groupBox5</value>
@@ -532,8 +553,8 @@
   <data name="SSLCK.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
   </data>
-  <data name="label9.Location" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABRTeXN0ZW0uRHJhd2luZy5Qb2ludAIAAAABeAF5AAAICAIAAAAeAAAAIQAAAAs=</value>
+  <data name="label9.Location" type="System.Drawing.Point, System.Drawing">
+    <value>30, 33</value>
   </data>
   <data name="&gt;&gt;groupBox5.Parent" xml:space="preserve">
     <value>panel1</value>
@@ -547,23 +568,23 @@
   <data name="&gt;&gt;sendAccountTB.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="continueSend.Size" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABNTeXN0ZW0uRHJhd2luZy5TaXplAgAAAAV3aWR0aAZoZWlnaHQAAAgIAgAAAEoAAAAVAAAACw==</value>
+  <data name="continueSend.Size" type="System.Drawing.Size, System.Drawing">
+    <value>74, 21</value>
   </data>
   <data name="continueSend.Text" xml:space="preserve">
-    <value>连续发送</value>
+    <value>Непрерывная отправка</value>
   </data>
-  <data name="groupBox5.Location" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABRTeXN0ZW0uRHJhd2luZy5Qb2ludAIAAAABeAF5AAAICAIAAABhAQAAmQEAAAs=</value>
+  <data name="groupBox5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>353, 409</value>
   </data>
-  <data name="SSLCK.Location" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABRTeXN0ZW0uRHJhd2luZy5Qb2ludAIAAAABeAF5AAAICAIAAAC8AAAAkQAAAAs=</value>
+  <data name="SSLCK.Location" type="System.Drawing.Point, System.Drawing">
+    <value>188, 145</value>
   </data>
   <data name="&gt;&gt;closePic.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="closePic.Location" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABRTeXN0ZW0uRHJhd2luZy5Qb2ludAIAAAABeAF5AAAICAIAAADwAgAACgAAAAs=</value>
+  <data name="closePic.Location" type="System.Drawing.Point, System.Drawing">
+    <value>752, 10</value>
   </data>
   <data name="&gt;&gt;portTB.Name" xml:space="preserve">
     <value>portTB</value>
@@ -571,11 +592,11 @@
   <data name="&gt;&gt;portTB.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="startRtn.Size" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABNTeXN0ZW0uRHJhd2luZy5TaXplAgAAAAV3aWR0aAZoZWlnaHQAAAgIAgAAADIAAAAVAAAACw==</value>
+  <data name="startRtn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>50, 21</value>
   </data>
   <data name="startRtn.Text" xml:space="preserve">
-    <value>开启</value>
+    <value>Включить</value>
   </data>
   <data name="&gt;&gt;sendPassTB.ZOrder" xml:space="preserve">
     <value>3</value>
@@ -592,11 +613,11 @@
   <data name="&gt;&gt;sendInterval.Type" xml:space="preserve">
     <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="subjecTB.Location" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABRTeXN0ZW0uRHJhd2luZy5Qb2ludAIAAAABeAF5AAAICAIAAABPAAAAHgAAAAs=</value>
+  <data name="subjecTB.Location" type="System.Drawing.Point, System.Drawing">
+    <value>79, 30</value>
   </data>
-  <data name="label13.Location" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABRTeXN0ZW0uRHJhd2luZy5Qb2ludAIAAAABeAF5AAAICAIAAADVAgAA9QEAAAs=</value>
+  <data name="label13.Location" type="System.Drawing.Point, System.Drawing">
+    <value>725, 501</value>
   </data>
   <data name="&gt;&gt;reciveAccountTB2.Name" xml:space="preserve">
     <value>reciveAccountTB2</value>
@@ -622,8 +643,8 @@
   <data name="label6.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="sendPassTB.Size" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABNTeXN0ZW0uRHJhd2luZy5TaXplAgAAAAV3aWR0aAZoZWlnaHQAAAgIAgAAAPgAAAAXAAAACw==</value>
+  <data name="sendPassTB.Size" type="System.Drawing.Size, System.Drawing">
+    <value>248, 23</value>
   </data>
   <data name="endRtn.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -656,10 +677,10 @@
     <value>groupBox2</value>
   </data>
   <data name="SSLCK.Text" xml:space="preserve">
-    <value>使用安全链接（SSL）</value>
+    <value>Используйте безопасную ссылку (SSL)</value>
   </data>
-  <data name="SSLCK.Size" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABNTeXN0ZW0uRHJhd2luZy5TaXplAgAAAAV3aWR0aAZoZWlnaHQAAAgIAgAAAI8AAAAVAAAACw==</value>
+  <data name="SSLCK.Size" type="System.Drawing.Size, System.Drawing">
+    <value>143, 21</value>
   </data>
   <data name="&gt;&gt;label13.Name" xml:space="preserve">
     <value>label13</value>
@@ -673,8 +694,8 @@
   <data name="&gt;&gt;groupBox4.Name" xml:space="preserve">
     <value>groupBox4</value>
   </data>
-  <data name="continueSend.Location" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABRTeXN0ZW0uRHJhd2luZy5Qb2ludAIAAAABeAF5AAAICAIAAAAXAAAAPgAAAAs=</value>
+  <data name="continueSend.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 62</value>
   </data>
   <data name="&gt;&gt;groupBox5.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -706,14 +727,14 @@
   <data name="&gt;&gt;groupBox3.Name" xml:space="preserve">
     <value>groupBox3</value>
   </data>
-  <data name="label2.Location" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABRTeXN0ZW0uRHJhd2luZy5Qb2ludAIAAAABeAF5AAAICAIAAAAdAAAARwAAAAs=</value>
+  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>29, 71</value>
   </data>
-  <data name="portTB.Size" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABNTeXN0ZW0uRHJhd2luZy5TaXplAgAAAAV3aWR0aAZoZWlnaHQAAAgIAgAAAEEAAAAXAAAACw==</value>
+  <data name="portTB.Size" type="System.Drawing.Size, System.Drawing">
+    <value>65, 23</value>
   </data>
-  <data name="label1.Location" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABRTeXN0ZW0uRHJhd2luZy5Qb2ludAIAAAABeAF5AAAICAIAAAAdAAAAIwAAAAs=</value>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>29, 35</value>
   </data>
   <data name="&gt;&gt;groupBox1.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -730,8 +751,8 @@
   <data name="label11.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="reciveNameTB1.Location" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABRTeXN0ZW0uRHJhd2luZy5Qb2ludAIAAAABeAF5AAAICAIAAABWAAAAIwAAAAs=</value>
+  <data name="reciveNameTB1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>86, 35</value>
   </data>
   <data name="label10.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -793,8 +814,8 @@
   <data name="groupBox5.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
-  <data name="label3.Location" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABRTeXN0ZW0uRHJhd2luZy5Qb2ludAIAAAABeAF5AAAICAIAAAAUAAAAawAAAAs=</value>
+  <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 107</value>
   </data>
   <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
     <value>7</value>
@@ -826,8 +847,8 @@
   <data name="panel1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="reciveAccountTB2.Location" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABRTeXN0ZW0uRHJhd2luZy5Qb2ludAIAAAABeAF5AAAICAIAAABWAAAAjgAAAAs=</value>
+  <data name="reciveAccountTB2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>86, 142</value>
   </data>
   <data name="label7.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -847,11 +868,11 @@
   <data name="&gt;&gt;label3.Name" xml:space="preserve">
     <value>label3</value>
   </data>
-  <data name="saveBtn.Size" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABNTeXN0ZW0uRHJhd2luZy5TaXplAgAAAAV3aWR0aAZoZWlnaHQAAAgIAgAAAHcAAAAyAAAACw==</value>
+  <data name="saveBtn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>119, 50</value>
   </data>
   <data name="saveBtn.Text" xml:space="preserve">
-    <value>保存</value>
+    <value>Спасти</value>
   </data>
   <data name="&gt;&gt;label10.Parent" xml:space="preserve">
     <value>groupBox3</value>
@@ -880,8 +901,8 @@
   <data name="sendInterval.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="groupBox2.Location" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABRTeXN0ZW0uRHJhd2luZy5Qb2ludAIAAAABeAF5AAAICAIAAACRAQAADgAAAAs=</value>
+  <data name="groupBox2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>401, 14</value>
   </data>
   <data name="&gt;&gt;label6.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -892,14 +913,14 @@
   <data name="&gt;&gt;label2.Parent" xml:space="preserve">
     <value>groupBox1</value>
   </data>
-  <data name="reciveAccountTB2.Size" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABNTeXN0ZW0uRHJhd2luZy5TaXplAgAAAAV3aWR0aAZoZWlnaHQAAAgIAgAAAPgAAAAXAAAACw==</value>
+  <data name="reciveAccountTB2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>248, 23</value>
   </data>
-  <data name="groupBox1.Location" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABRTeXN0ZW0uRHJhd2luZy5Qb2ludAIAAAABeAF5AAAICAIAAAAUAAAADgAAAAs=</value>
+  <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 14</value>
   </data>
-  <data name="$this.StartPosition" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0ZW0uV2luZG93cy5Gb3Jtcy5Gb3JtU3RhcnRQb3NpdGlvbgEAAAAHdmFsdWVfXwAIAgAAAAEAAAAL</value>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterScreen</value>
   </data>
   <data name="&gt;&gt;label7.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -907,8 +928,8 @@
   <data name="&gt;&gt;label7.Name" xml:space="preserve">
     <value>label7</value>
   </data>
-  <data name="reciveAccountTB1.Size" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABNTeXN0ZW0uRHJhd2luZy5TaXplAgAAAAV3aWR0aAZoZWlnaHQAAAgIAgAAAPgAAAAXAAAACw==</value>
+  <data name="reciveAccountTB1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>248, 23</value>
   </data>
   <data name="&gt;&gt;label4.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -925,8 +946,8 @@
   <data name="&gt;&gt;label5.Name" xml:space="preserve">
     <value>label5</value>
   </data>
-  <data name="sendAccountTB.Size" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABNTeXN0ZW0uRHJhd2luZy5TaXplAgAAAAV3aWR0aAZoZWlnaHQAAAgIAgAAAPgAAAAXAAAACw==</value>
+  <data name="sendAccountTB.Size" type="System.Drawing.Size, System.Drawing">
+    <value>248, 23</value>
   </data>
   <data name="reciveNameTB2.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -938,10 +959,10 @@
     <value>0</value>
   </data>
   <data name="endRtn.Text" xml:space="preserve">
-    <value>关闭</value>
+    <value>Неисправность</value>
   </data>
-  <data name="endRtn.Size" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABNTeXN0ZW0uRHJhd2luZy5TaXplAgAAAAV3aWR0aAZoZWlnaHQAAAgIAgAAADIAAAAVAAAACw==</value>
+  <data name="endRtn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>50, 21</value>
   </data>
   <data name="&gt;&gt;continueSend.Parent" xml:space="preserve">
     <value>groupBox4</value>
@@ -949,8 +970,8 @@
   <data name="&gt;&gt;alarmSend.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="reciveNameTB2.Location" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABRTeXN0ZW0uRHJhd2luZy5Qb2ludAIAAAABeAF5AAAICAIAAABWAAAAagAAAAs=</value>
+  <data name="reciveNameTB2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>86, 106</value>
   </data>
   <data name="startRtn.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -959,10 +980,10 @@
     <value>0</value>
   </data>
   <data name="alarmSend.Text" xml:space="preserve">
-    <value>报警发送</value>
+    <value>Отправка тревоги</value>
   </data>
-  <data name="alarmSend.Size" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABNTeXN0ZW0uRHJhd2luZy5TaXplAgAAAAV3aWR0aAZoZWlnaHQAAAgIAgAAAEoAAAAVAAAACw==</value>
+  <data name="alarmSend.Size" type="System.Drawing.Size, System.Drawing">
+    <value>74, 21</value>
   </data>
   <data name="&gt;&gt;label8.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -979,8 +1000,8 @@
   <data name="SSLCK.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="sendInterval.Size" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABNTeXN0ZW0uRHJhd2luZy5TaXplAgAAAAV3aWR0aAZoZWlnaHQAAAgIAgAAAHgAAAAXAAAACw==</value>
+  <data name="sendInterval.Size" type="System.Drawing.Size, System.Drawing">
+    <value>120, 23</value>
   </data>
   <data name="&gt;&gt;SSLCK.Name" xml:space="preserve">
     <value>SSLCK</value>
@@ -994,11 +1015,11 @@
   <data name="continueSend.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="label4.Location" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABRTeXN0ZW0uRHJhd2luZy5Qb2ludAIAAAABeAF5AAAICAIAAAAdAAAAkwAAAAs=</value>
+  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>29, 147</value>
   </data>
-  <data name="smtpTB.Location" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABRTeXN0ZW0uRHJhd2luZy5Qb2ludAIAAAABeAF5AAAICAIAAABPAAAAaAAAAAs=</value>
+  <data name="smtpTB.Location" type="System.Drawing.Point, System.Drawing">
+    <value>79, 104</value>
   </data>
   <data name="smtpTB.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -1009,8 +1030,8 @@
   <data name="label13.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="portTB.Location" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABRTeXN0ZW0uRHJhd2luZy5Qb2ludAIAAAABeAF5AAAICAIAAABPAAAAkAAAAAs=</value>
+  <data name="portTB.Location" type="System.Drawing.Point, System.Drawing">
+    <value>79, 144</value>
   </data>
   <data name="label12.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1018,8 +1039,8 @@
   <data name="&gt;&gt;continueSend.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="$this.AutoScaleDimensions" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABRTeXN0ZW0uRHJhd2luZy5TaXplRgIAAAAFd2lkdGgGaGVpZ2h0AAALCwIAAAAAAOBAAACIQQs=</value>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>7, 17</value>
   </data>
   <data name="&gt;&gt;label11.Parent" xml:space="preserve">
     <value>groupBox4</value>
@@ -1033,14 +1054,14 @@
   <data name="contentTB.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
   </data>
-  <data name="panel1.Location" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABRTeXN0ZW0uRHJhd2luZy5Qb2ludAIAAAABeAF5AAAICAIAAAABAAAAKAAAAAs=</value>
+  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1, 40</value>
   </data>
-  <data name="label6.Location" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABRTeXN0ZW0uRHJhd2luZy5Qb2ludAIAAAABeAF5AAAICAIAAAAdAAAARwAAAAs=</value>
+  <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>29, 71</value>
   </data>
-  <data name="label5.Location" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABRTeXN0ZW0uRHJhd2luZy5Qb2ludAIAAAABeAF5AAAICAIAAAARAAAAJgAAAAs=</value>
+  <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>17, 38</value>
   </data>
   <data name="continueSend.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -1051,8 +1072,8 @@
   <data name="&gt;&gt;reciveNameTB2.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="groupBox3.Location" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABRTeXN0ZW0uRHJhd2luZy5Qb2ludAIAAAABeAF5AAAICAIAAAAUAAAAzgAAAAs=</value>
+  <data name="groupBox3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 206</value>
   </data>
   <data name="&gt;&gt;reciveNameTB1.Name" xml:space="preserve">
     <value>reciveNameTB1</value>

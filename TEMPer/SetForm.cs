@@ -329,7 +329,7 @@ namespace TEMPer
       this.closePic.TabStop = false;
       this.closePic.Click += new EventHandler(this.closePic_Click);
       componentResourceManager.ApplyResources((object) this.folderBrowserDialog1, "folderBrowserDialog1");
-      this.openFileDialog1.FileName = "音频文件";
+      this.openFileDialog1.FileName = "AudioFile";
       componentResourceManager.ApplyResources((object) this.openFileDialog1, "openFileDialog1");
       this.timer1.Interval = 1000;
       this.timer1.Tick += new EventHandler(this.timer1_Tick);
@@ -429,7 +429,7 @@ namespace TEMPer
       Settings.Default.Unit = num;
       Settings.Default.Save();
       this.mf.clearData();
-      string str1 = Settings.Default.Language == 2 ? "Temp unit : " : "当前温度单位：";
+      string str1 = Settings.Default.Language == 2 ? "Temp unit : " : "Текущая единица измерения температуры：";
       string str2;
       if (num == 1)
       {
@@ -480,7 +480,7 @@ namespace TEMPer
       if (this.isFirst)
         return;
       this.tipPanel.Visible = true;
-      this.textBox1.Text = "设置成功";
+      this.textBox1.Text = "Успешно установлен";
       this.timer1.Start();
     }
 
@@ -497,7 +497,7 @@ namespace TEMPer
 
     private void soundBtn_Click(object sender, EventArgs e)
     {
-      this.openFileDialog1.Filter = "音频文|*.mp3;*.wma;";
+      this.openFileDialog1.Filter = "Аудио|*.mp3;*.wma;";
       if (this.openFileDialog1.ShowDialog() != DialogResult.OK)
         return;
       string fileName = this.openFileDialog1.FileName;
@@ -513,7 +513,7 @@ namespace TEMPer
       Settings.Default.Language = num;
       Settings.Default.Save();
       MessageBoxButtons buttons = MessageBoxButtons.OKCancel;
-      if (MessageBox.Show(Settings.Default.Language == 2 ? "Switch can lead to restart the software, are you sure you want to switch?" : "切换会导致软件重新启动，您确定要切换吗？", Settings.Default.Language == 2 ? "Language" : "语言", buttons) == DialogResult.OK)
+      if (MessageBox.Show(Settings.Default.Language == 2 ? "Switch can lead to restart the software, are you sure you want to switch?" : "Переключение приведет к перезапуску программного обеспечения. Вы действительно хотите переключиться?", Settings.Default.Language == 2 ? "Language" : "Русский(машинный перевод)", buttons) == DialogResult.OK)
       {
         Settings.Default.Language = num;
         Settings.Default.Save();

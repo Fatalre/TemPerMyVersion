@@ -210,35 +210,35 @@ namespace TEMPer
       string company = this.textBox6.Text;
       if (user.Length < 5)
       {
-        int num1 = (int) MessageBox.Show(Settings.Default.Language == 2 ? "User name length at least five" : "用户名长度至少5位");
+        int num1 = (int) MessageBox.Show(Settings.Default.Language == 2 ? "User name length at least five" : "Имя пользователя должно быть не менее 5 символов.");
       }
       else if (!Regex.IsMatch(user, "^[a-zA-Z0-9_]{5,16}$"))
       {
-        int num2 = (int) MessageBox.Show(Settings.Default.Language == 2 ? "User name only allow alphanumeric underline combination" : "用户名只允许字母数字下划线组合");
+        int num2 = (int) MessageBox.Show(Settings.Default.Language == 2 ? "User name only allow alphanumeric underline combination" : "Имя пользователя допускает только буквенно-цифровые комбинации и подчеркивания.");
       }
       else if (pass.Length < 5)
       {
-        int num3 = (int) MessageBox.Show(Settings.Default.Language == 2 ? "Password length is at least five" : "密码长度至少5位");
+        int num3 = (int) MessageBox.Show(Settings.Default.Language == 2 ? "Password length is at least five" : "Длина пароля не менее 5 символов");
       }
       else if (text.Length < 5)
       {
-        int num4 = (int) MessageBox.Show(Settings.Default.Language == 2 ? "Confirm password length at least five" : "确认密码长度至少5位");
+        int num4 = (int) MessageBox.Show(Settings.Default.Language == 2 ? "Confirm password length at least five" : "Подтвердите, что пароль состоит не менее чем из 5 символов.");
       }
       else if (text != pass)
       {
-        int num5 = (int) MessageBox.Show(Settings.Default.Language == 2 ? "The original password input error" : "两次密码输入不一致");
+        int num5 = (int) MessageBox.Show(Settings.Default.Language == 2 ? "The original password input error" : "Две записи пароля несовместимы");
       }
       else if (name.Length == 0)
       {
-        int num6 = (int) MessageBox.Show(Settings.Default.Language == 2 ? "Please fill in your name" : "请填写姓名");
+        int num6 = (int) MessageBox.Show(Settings.Default.Language == 2 ? "Please fill in your name" : "Пожалуйста, введите ваше имя");
       }
       else if (!Regex.IsMatch(tel, "^[0-9]{8,12}$"))
       {
-        int num7 = (int) MessageBox.Show(Settings.Default.Language == 2 ? "Please fill in the correct contact way" : "请填写正确的联系方式");
+        int num7 = (int) MessageBox.Show(Settings.Default.Language == 2 ? "Please fill in the correct contact way" : "Пожалуйста, введите правильную контактную информацию");
       }
       else if (company.Length == 0)
       {
-        int num8 = (int) MessageBox.Show(Settings.Default.Language == 2 ? "Please fill in the company" : "请填写公司");
+        int num8 = (int) MessageBox.Show(Settings.Default.Language == 2 ? "Please fill in the company" : "Пожалуйста, заполните компанию");
       }
       else
         ThreadPool.QueueUserWorkItem((WaitCallback) (o =>
@@ -276,11 +276,11 @@ namespace TEMPer
           });
           if (str == null)
           {
-            int num9 = (int) MessageBox.Show(Settings.Default.Language == 2 ? "Unable to connect to the server registration, overtime!" : "注册超时,无法连接服务器!");
+            int num9 = (int) MessageBox.Show(Settings.Default.Language == 2 ? "Unable to connect to the server registration, overtime!" : "Время регистрации истекло, невозможно подключиться к серверу!");
           }
           else if (str == ProtocolRegisteredKey.Error.ToString())
           {
-            int num10 = (int) MessageBox.Show(Settings.Default.Language == 2 ? "Please submit the correct information!" : "请提交正确信息!");
+            int num10 = (int) MessageBox.Show(Settings.Default.Language == 2 ? "Please submit the correct information!" : "Пожалуйста, отправьте правильную информацию!");
           }
           else if (str == ProtocolRegisteredKey.Success.ToString())
             this.Invoke(new Action( delegate()
@@ -290,11 +290,11 @@ namespace TEMPer
             }));
           else if (str == ProtocolRegisteredKey.Exist.ToString())
           {
-            int num11 = (int) MessageBox.Show(Settings.Default.Language == 2 ? "The user name has been registered! " : "用户名已经注册!");
+            int num11 = (int) MessageBox.Show(Settings.Default.Language == 2 ? "The user name has been registered! " : "Имя пользователя уже зарегистрировано!");
           }
           else
           {
-            int num12 = (int) MessageBox.Show(Settings.Default.Language == 2 ? "Connect to the server error! " : "连接服务器错误!");
+            int num12 = (int) MessageBox.Show(Settings.Default.Language == 2 ? "Connect to the server error! " : "Ошибка сервера подключения!");
           }
         }));
     }
@@ -303,7 +303,7 @@ namespace TEMPer
     {
       if (!this.isSuccess)
         return;
-      int num = (int) MessageBox.Show(Settings.Default.Language == 2 ? "Registered successfully!" : "注册成功!");
+      int num = (int) MessageBox.Show(Settings.Default.Language == 2 ? "Registered successfully!" : "Вы успешно зарегистрировались!");
     }
 
     private void RegistForm_MouseMove(object sender, MouseEventArgs e)

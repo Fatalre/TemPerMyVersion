@@ -187,25 +187,25 @@ namespace TEMPer
       switch (this.tag)
       {
         case 1:
-          this.titleLabel.Text = Settings.Default.Language == 2 ? "Inner temp" : "内部温度";
+          this.titleLabel.Text = Settings.Default.Language == 2 ? "Inner temp" : "Внутренняя температура";
           this.calibValue.Text = string.Concat((object) PubMethod.calib1);
           this.upperValue.Text = string.Concat((object) Settings.Default.tempUpper1);
           this.lowerValue.Text = string.Concat((object) Settings.Default.tempLower1);
           break;
         case 2:
-          this.titleLabel.Text = Settings.Default.Language == 2 ? "Inner hum" : "内部湿度";
+          this.titleLabel.Text = Settings.Default.Language == 2 ? "Inner hum" : "Внутренняя влажность";
           this.calibValue.Text = string.Concat((object) PubMethod.calib2);
           this.upperValue.Text = string.Concat((object) Settings.Default.tempUpper2);
           this.lowerValue.Text = string.Concat((object) Settings.Default.tempLower2);
           break;
         case 3:
-          this.titleLabel.Text = Settings.Default.Language == 2 ? "Outer temp" : "外部温度";
+          this.titleLabel.Text = Settings.Default.Language == 2 ? "Outer temp" : "Наружная температура";
           this.calibValue.Text = string.Concat((object) PubMethod.calib3);
           this.upperValue.Text = string.Concat((object) Settings.Default.tempUpper3);
           this.lowerValue.Text = string.Concat((object) Settings.Default.tempLower3);
           break;
         case 4:
-          this.titleLabel.Text = Settings.Default.Language == 2 ? "Outer hum" : "外部湿度";
+          this.titleLabel.Text = Settings.Default.Language == 2 ? "Outer hum" : "Внешняя влажность";
           this.calibValue.Text = string.Concat((object) PubMethod.calib4);
           this.upperValue.Text = string.Concat((object) Settings.Default.tempUpper4);
           this.lowerValue.Text = string.Concat((object) Settings.Default.tempLower4);
@@ -270,7 +270,7 @@ namespace TEMPer
       }
       else
       {
-        int num = (int) MessageBox.Show(Settings.Default.Language == 2 ? "Set fail" : "设置失败");
+        int num = (int) MessageBox.Show(Settings.Default.Language == 2 ? "Set fail" : "Ошибка установки");
       }
     }
   }

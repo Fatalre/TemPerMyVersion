@@ -162,7 +162,7 @@ namespace TEMPer
 
     private void AboutForm_Load(object sender, EventArgs e)
     {
-      this.softLabel.Text = "TEMPer V26.2";
+      this.softLabel.Text = "TEMPer V26.2 Руссификатор by Fatalre";
       this.fireLabel.Text = PubMethod.version;
     }
 
@@ -170,14 +170,14 @@ namespace TEMPer
     {
       if (PubMethod.HasUpdate())
       {
-        if (MessageBox.Show(Settings.Default.Language == 2 ? "Program detects a new version, whether the update immediately?" : "程序检测到新版本，是否立即更新？", "", MessageBoxButtons.YesNo) != DialogResult.Yes || !File.Exists(Application.StartupPath + "/RDingWebUpdate.exe"))
+        if (MessageBox.Show(Settings.Default.Language == 2 ? "Program detects a new version, whether the update immediately?" : "Программа определяет новую версию, нужно ли ее сразу обновлять?", "", MessageBoxButtons.YesNo) != DialogResult.Yes || !File.Exists(Application.StartupPath + "/RDingWebUpdate.exe"))
           return;
         Process.Start(Application.StartupPath + "/RDingWebUpdate.exe");
         Environment.Exit(0);
       }
       else
       {
-        int num = (int) MessageBox.Show(this.label11.Text + "," + (Settings.Default.Language == 2 ? "This version is the latest version！" : "此版本是最新版本！"));
+        int num = (int) MessageBox.Show(this.label11.Text + "," + (Settings.Default.Language == 2 ? "This version is the latest version！" : "Это последняя версия!"));
       }
     }
   }

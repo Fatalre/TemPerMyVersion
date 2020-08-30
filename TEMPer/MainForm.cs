@@ -1,10 +1,4 @@
-﻿// Decompiled with JetBrains decompiler
-// Type: TEMPer.MainForm
-// Assembly: TEMPer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-// MVID: 0178A0CF-D577-468C-82A6-F9AFBCC94525
-// Assembly location: D:\Program\Tempr\TEMPer.exe
-
-using AxTeeChart;
+﻿using AxTeeChart;
 using AxWMPLib;
 using System;
 using System.ComponentModel;
@@ -19,6 +13,8 @@ using System.Threading;
 using System.Windows.Forms;
 using System.Windows.Forms.Layout;
 using TEMPer.Properties;
+using System.Management;
+using System.Collections.Generic;
 
 namespace TEMPer
 {
@@ -186,6 +182,8 @@ namespace TEMPer
     private int isureMailCount = 0;
     private RemoteForm rf;
     private string NamePwd;
+    Boolean NeedToDevice = true;
+    int temp;
 
     protected override void Dispose(bool disposing)
     {
@@ -690,7 +688,7 @@ namespace TEMPer
     public MainForm()
     {
       this.setLanguage();
-      /*try
+      try
       {
         this.InitializeComponent();
       }
@@ -698,8 +696,8 @@ namespace TEMPer
       {
         int num1 = (int) MessageBox.Show(ex.ToString());
         int num2 = (int) MessageBox.Show(ex.StackTrace);
-      }*/
-            this.InitializeComponent();
+      }
+            //this.InitializeComponent();
         }
 
     public void setLanguage()
@@ -717,7 +715,7 @@ namespace TEMPer
       this.setTag((Control) this);
       this.asc.controllInitializeSize((Control) this);
       if (Settings.Default.Language == 1)
-        this.unitBtn.Text = "当前温度单位是:" + Settings.Default.set;
+        this.unitBtn.Text = "Ед. изм. темп: " + Settings.Default.set;
       else
         this.unitBtn.Text = "Temp unit : " + Settings.Default.set;
       if (string.IsNullOrEmpty(Settings.Default.FilePath))
@@ -757,23 +755,46 @@ namespace TEMPer
       this.chart.Series(1).Clear();
       this.chart.Series(2).Clear();
       this.chart.Series(3).Clear();
-      this.data1.Text = "wait";
-      this.data2.Text = "wait";
-      this.data3.Text = "wait";
-      this.data4.Text = "wait";
-      this.dataAvg1.Text = "wait";
-      this.dataAvg2.Text = "wait";
-      this.dataAvg3.Text = "wait";
-      this.dataAvg4.Text = "wait";
-      this.dataMax1.Text = "wait";
-      this.dataMax2.Text = "wait";
-      this.dataMax3.Text = "wait";
-      this.dataMax4.Text = "wait";
-      this.dataMin1.Text = "wait";
-      this.dataMin2.Text = "wait";
-      this.dataMin3.Text = "wait";
-      this.dataMin4.Text = "wait";
-      this.dataIndex = 0;
+            if (Settings.Default.Language == 1)
+            {
+                this.data1.Text = "ждем";
+                this.data2.Text = "ждем";
+                this.data3.Text = "ждем";
+                this.data4.Text = "ждем";
+                this.dataAvg1.Text = "ждем";
+                this.dataAvg2.Text = "ждем";
+                this.dataAvg3.Text = "ждем";
+                this.dataAvg4.Text = "ждем";
+                this.dataMax1.Text = "ждем";
+                this.dataMax2.Text = "ждем";
+                this.dataMax3.Text = "ждем";
+                this.dataMax4.Text = "ждем";
+                this.dataMin1.Text = "ждем";
+                this.dataMin2.Text = "ждем";
+                this.dataMin3.Text = "ждем";
+                this.dataMin4.Text = "ждем";
+                this.dataIndex = 0;
+            }
+            else
+            {
+                this.data1.Text = "wait";
+                this.data2.Text = "wait";
+                this.data3.Text = "wait";
+                this.data4.Text = "wait";
+                this.dataAvg1.Text = "wait";
+                this.dataAvg2.Text = "wait";
+                this.dataAvg3.Text = "wait";
+                this.dataAvg4.Text = "wait";
+                this.dataMax1.Text = "wait";
+                this.dataMax2.Text = "wait";
+                this.dataMax3.Text = "wait";
+                this.dataMax4.Text = "wait";
+                this.dataMin1.Text = "wait";
+                this.dataMin2.Text = "wait";
+                this.dataMin3.Text = "wait";
+                this.dataMin4.Text = "wait";
+                this.dataIndex = 0;
+            }
     }
 
     private void titlePanel_MouseUp(object sender, MouseEventArgs e)
@@ -822,22 +843,65 @@ namespace TEMPer
       ++this.timeIndex;
     }
 
-    private bool openDevice()
-    {
-      for (int index1 = 0; index1 < MainForm.pids.Length; ++index1)
-      {
-        for (int index2 = 0; index2 < MainForm.vids.Length; ++index2)
+        static List<USBDeviceInfo> GetUSBDevices()
         {
-          PubMethod.pDevice = RDing.OpenUSBDevice(MainForm.vids[index2], MainForm.pids[index1]);
-          if (PubMethod.pDevice.ToInt32() != -1)
-          {
-            PubMethod.inputLength = RDing.GetInputLength(PubMethod.pDevice);
-            PubMethod.outputLength = RDing.GetOutputLength(PubMethod.pDevice);
-            return PubMethod.inputLength != (ushort) 9 || PubMethod.outputLength != (ushort) 9 || true;
-          }
+            List<USBDeviceInfo> devices = new List<USBDeviceInfo>();
+
+            ManagementObjectCollection collection;
+            using (var searcher = new ManagementObjectSearcher(@"Select * From Win32_USBHub"))
+                collection = searcher.Get();
+
+            foreach (var device in collection)
+            {
+                devices.Add(new USBDeviceInfo(
+                (string)device.GetPropertyValue("DeviceID"),
+                (string)device.GetPropertyValue("PNPDeviceID"),
+                (string)device.GetPropertyValue("Description")
+                ));
+            }
+
+            collection.Dispose();
+            return devices;
         }
-      }
-      return false;
+
+        class USBDeviceInfo
+        {
+            public USBDeviceInfo(string deviceID, string pnpDeviceID, string description)
+            {
+                this.DeviceID = deviceID;
+                this.PnpDeviceID = pnpDeviceID;
+                this.Description = description;
+            }
+            public string DeviceID { get; private set; }
+            public string PnpDeviceID { get; private set; }
+            public string Description { get; private set; }
+        }
+
+        private bool openDevice()
+    {
+            if (NeedToDevice == true)
+            {
+                var usbDevices = GetUSBDevices();
+                for (int index1 = 0; index1 < MainForm.pids.Length; ++index1)
+                {
+                    for (int index2 = 0; index2 < MainForm.vids.Length; ++index2)
+                    { 
+                        PubMethod.pDevice = RDing.OpenUSBDevice(MainForm.vids[index2], MainForm.pids[index1]);
+                        if (PubMethod.pDevice.ToInt32() != -1)
+                        {
+
+                            PubMethod.inputLength = RDing.GetInputLength(PubMethod.pDevice);
+                            PubMethod.outputLength = RDing.GetOutputLength(PubMethod.pDevice);
+                            return PubMethod.inputLength != (ushort)9 || PubMethod.outputLength != (ushort)9 || true;
+                        }
+                    }
+                }
+                return false;
+            }
+            else
+            {
+                return false;
+            }
     }
 
     private void getVersion()
@@ -1476,30 +1540,30 @@ namespace TEMPer
         case 1:
           if (PubMethod.getCurveData(PubMethod.data3) > Settings.Default.tempUpper3)
           {
-            stringBuilder.Append((Settings.Default.Language == 2 ? (object) "Outer tempe exceeds the upper limit, current upper limit : " : (object) "外部温度超出上限，当前上限：").ToString() + (object) Settings.Default.tempUpper3 + ";");
+            stringBuilder.Append((Settings.Default.Language == 2 ? (object) "Outer tempe exceeds the upper limit, current upper limit : " : (object) "Внешняя температура превышает верхний предел, текущий верхний предел：").ToString() + (object) Settings.Default.tempUpper3 + ";");
             if (Settings.Default.SendType == 1)
-              this.startSend((Settings.Default.Language == 2 ? "Outer tempe exceeds the upper limit, current upper limit : " : "外部温度超出上限，当前上限：") + (Settings.Default.tempUpper3 + (double) Settings.Default.Language == 2.0 ? ", current temp : " : ",当前温度：") + PubMethod.data3);
+              this.startSend((Settings.Default.Language == 2 ? "Outer tempe exceeds the upper limit, current upper limit : " : "Внешняя температура превышает верхний предел, текущий верхний предел：") + (Settings.Default.tempUpper3 + (double) Settings.Default.Language == 2.0 ? ", current temp : " : ", текущая температура：") + PubMethod.data3);
             this.playSound();
           }
           if (PubMethod.getCurveData(PubMethod.data3) < Settings.Default.tempLower3)
           {
-            stringBuilder.Append((Settings.Default.Language == 2 ? (object) "Outer temp below limit, current lower limit : " : (object) "外部温度低于限，当前下限：").ToString() + (object) Settings.Default.tempLower3 + ";");
+            stringBuilder.Append((Settings.Default.Language == 2 ? (object) "Outer temp below limit, current lower limit : " : (object) "Наружная температура ниже предела, текущий нижний предел: ").ToString() + (object) Settings.Default.tempLower3 + ";");
             if (Settings.Default.SendType == 1)
-              this.startSend((Settings.Default.Language == 2 ? (object) "Outer temp below limit, current lower limit : " : (object) "外部温度低于限，当前下限：").ToString() + (object) Settings.Default.tempLower3 + (Settings.Default.Language == 2 ? (object) ", current temp : " : (object) ",当前温度：") + PubMethod.data3);
+              this.startSend((Settings.Default.Language == 2 ? (object) "Outer temp below limit, current lower limit : " : (object) "Наружная температура ниже предела, текущий нижний предел: ").ToString() + (object) Settings.Default.tempLower3 + (Settings.Default.Language == 2 ? (object) ", current temp : " : (object)", текущая температура：") + PubMethod.data3);
             this.playSound();
           }
           if (PubMethod.getCurveData(PubMethod.data4) > Settings.Default.tempUpper4)
           {
-            stringBuilder.Append((Settings.Default.Language == 2 ? (object) "Outer hum exceeds the upper limit, current upper limit : " : (object) "外部湿度超出上限，当前上限：").ToString() + (object) Settings.Default.tempUpper4 + ";");
+            stringBuilder.Append((Settings.Default.Language == 2 ? (object) "Outer hum exceeds the upper limit, current upper limit : " : (object) "Внешняя влажность превышает верхний предел, текущий верхний предел:").ToString() + (object) Settings.Default.tempUpper4 + ";");
             if (Settings.Default.SendType == 1)
-              this.startSend((Settings.Default.Language == 2 ? (object) "Outer hum exceeds the upper limit, current upper limit : " : (object) "外部湿度超出上限，当前上限：").ToString() + (object) Settings.Default.tempUpper4 + (Settings.Default.Language == 2 ? (object) ", current hum : " : (object) ",当前湿度：") + PubMethod.data4);
+              this.startSend((Settings.Default.Language == 2 ? (object) "Outer hum exceeds the upper limit, current upper limit : " : (object) "Внешняя влажность превышает верхний предел, текущий верхний предел:").ToString() + (object) Settings.Default.tempUpper4 + (Settings.Default.Language == 2 ? (object) ", current hum : " : (object) ", текущая влажность：") + PubMethod.data4);
             this.playSound();
           }
           if (PubMethod.getCurveData(PubMethod.data4) < Settings.Default.tempLower4)
           {
-            stringBuilder.Append((Settings.Default.Language == 2 ? (object) "Outer hum below limit, current lower limit : " : (object) "外部湿度低于限，当前下限：").ToString() + (object) Settings.Default.tempLower4 + ";");
+            stringBuilder.Append((Settings.Default.Language == 2 ? (object) "Outer hum below limit, current lower limit : " : (object) "Внешняя влажность ниже лимита, текущий нижний предел:").ToString() + (object) Settings.Default.tempLower4 + ";");
             if (Settings.Default.SendType == 1)
-              this.startSend((Settings.Default.Language == 2 ? (object) "Outer hum below limit, current lower limit : " : (object) "外部湿度低于限，当前下限：").ToString() + (object) Settings.Default.tempLower4 + (Settings.Default.Language == 2 ? (object) ", current hum : " : (object) ",当前湿度：") + PubMethod.data4);
+              this.startSend((Settings.Default.Language == 2 ? (object) "Outer hum below limit, current lower limit : " : (object) "Внешняя влажность ниже лимита, текущий нижний предел:").ToString() + (object) Settings.Default.tempLower4 + (Settings.Default.Language == 2 ? (object) ", current hum : " : (object) ", текущая влажность：") + PubMethod.data4);
             this.playSound();
             break;
           }
@@ -1507,16 +1571,16 @@ namespace TEMPer
         case 2:
           if (PubMethod.getCurveData(PubMethod.data3) > Settings.Default.tempUpper3)
           {
-            stringBuilder.Append((Settings.Default.Language == 2 ? (object) "Outer tempe exceeds the upper limit, current upper limit : " : (object) "外部温度超出上限，当前上限：").ToString() + (object) Settings.Default.tempUpper3 + ";");
+            stringBuilder.Append((Settings.Default.Language == 2 ? (object) "Outer tempe exceeds the upper limit, current upper limit : " : (object) "Наружная температура превышает верхний предел, текущий верхний предел: ").ToString() + (object) Settings.Default.tempUpper3 + ";");
             if (Settings.Default.SendType == 1)
-              this.startSend((Settings.Default.Language == 2 ? (object) "Outer tempe exceeds the upper limit, current upper limit : " : (object) "外部温度超出上限，当前上限：").ToString() + (object) Settings.Default.tempUpper3 + (Settings.Default.Language == 2 ? (object) ", current temp : " : (object) ",当前温度：") + PubMethod.data3);
+              this.startSend((Settings.Default.Language == 2 ? (object) "Outer tempe exceeds the upper limit, current upper limit : " : (object) "Наружная температура превышает верхний предел, текущий верхний предел: ").ToString() + (object) Settings.Default.tempUpper3 + (Settings.Default.Language == 2 ? (object) ", current temp : " : (object) ", текущая температура:") + PubMethod.data3);
             this.playSound();
           }
           if (PubMethod.getCurveData(PubMethod.data3) < Settings.Default.tempLower3)
           {
-            stringBuilder.Append((Settings.Default.Language == 2 ? (object) "Outer temp below limit, current lower limit : " : (object) "外部温度低于限，当前下限：").ToString() + (object) Settings.Default.tempLower3 + ";");
+            stringBuilder.Append((Settings.Default.Language == 2 ? (object) "Outer temp below limit, current lower limit : " : (object) "Наружная температура ниже предела, текущий нижний предел: ").ToString() + (object) Settings.Default.tempLower3 + ";");
             if (Settings.Default.SendType == 1)
-              this.startSend((Settings.Default.Language == 2 ? (object) "Outer temp below limit, current lower limit : " : (object) "外部温度低于限，当前下限：").ToString() + (object) Settings.Default.tempLower3 + (Settings.Default.Language == 2 ? (object) "Search" : (object) ",, current temp : ：") + PubMethod.data3);
+              this.startSend((Settings.Default.Language == 2 ? (object) "Outer temp below limit, current lower limit : " : (object) "Наружная температура ниже предела, текущий нижний предел: ").ToString() + (object) Settings.Default.tempLower3 + (Settings.Default.Language == 2 ? (object) "Search" : (object) ",, current temp : ：") + PubMethod.data3);
             this.playSound();
             break;
           }
@@ -1524,30 +1588,30 @@ namespace TEMPer
         case 3:
           if (PubMethod.getCurveData(PubMethod.data1) > Settings.Default.tempUpper1)
           {
-            stringBuilder.Append((Settings.Default.Language == 2 ? (object) "Inner temp exceeds upper limit, current upper limit : " : (object) "内部温度超出上限，当前上限：").ToString() + (object) Settings.Default.tempUpper1 + ";");
+            stringBuilder.Append((Settings.Default.Language == 2 ? (object) "Inner temp exceeds upper limit, current upper limit : " : (object) "Внутренняя температура превышает верхний предел, текущий верхний предел:").ToString() + (object) Settings.Default.tempUpper1 + ";");
             if (Settings.Default.SendType == 1)
-              this.startSend((Settings.Default.Language == 2 ? (object) "Inner temp exceeds upper limit, current upper limit : " : (object) "内部温度超出上限，当前上限：").ToString() + (object) Settings.Default.tempUpper1 + (Settings.Default.Language == 2 ? (object) ", current temp : " : (object) ",当前温度：") + PubMethod.data1);
+              this.startSend((Settings.Default.Language == 2 ? (object) "Inner temp exceeds upper limit, current upper limit : " : (object) "Внутренняя температура превышает верхний предел, текущий верхний предел:").ToString() + (object) Settings.Default.tempUpper1 + (Settings.Default.Language == 2 ? (object) ", current temp : " : (object) ", текущая температура:") + PubMethod.data1);
             this.playSound();
           }
           if (PubMethod.getCurveData(PubMethod.data1) < Settings.Default.tempLower1)
           {
-            stringBuilder.Append((Settings.Default.Language == 2 ? (object) "Inner temp below limit, current lower limit : " : (object) "内部温度低于限，当前下限：").ToString() + (object) Settings.Default.tempLower1 + ";");
+            stringBuilder.Append((Settings.Default.Language == 2 ? (object) "Inner temp below limit, current lower limit : " : (object) "Внутренняя температура ниже предела, текущий нижний предел:").ToString() + (object) Settings.Default.tempLower1 + ";");
             if (Settings.Default.SendType == 1)
-              this.startSend((Settings.Default.Language == 2 ? (object) "Inner temp below limit, current lower limit : " : (object) "内部温度低于限，当前下限：").ToString() + (object) Settings.Default.tempLower1 + (Settings.Default.Language == 2 ? (object) ", current temp : " : (object) ",当前温度：") + PubMethod.data1);
+              this.startSend((Settings.Default.Language == 2 ? (object) "Inner temp below limit, current lower limit : " : (object) "Внутренняя температура ниже предела, текущий нижний предел:").ToString() + (object) Settings.Default.tempLower1 + (Settings.Default.Language == 2 ? (object) ", current temp : " : (object) ", текущая температура:") + PubMethod.data1);
             this.playSound();
           }
           if (PubMethod.getCurveData(PubMethod.data3) > Settings.Default.tempUpper3)
           {
-            stringBuilder.Append((Settings.Default.Language == 2 ? (object) "Outer tempe exceeds the upper limit, current upper limit :" : (object) "外部温度超出上限，当前上限：").ToString() + (object) Settings.Default.tempUpper3 + ";");
+            stringBuilder.Append((Settings.Default.Language == 2 ? (object) "Outer tempe exceeds the upper limit, current upper limit :" : (object) "Наружная температура превышает верхний предел, текущий верхний предел:").ToString() + (object) Settings.Default.tempUpper3 + ";");
             if (Settings.Default.SendType == 1)
-              this.startSend((Settings.Default.Language == 2 ? (object) "Outer tempe exceeds the upper limit, current upper limit :" : (object) "外部温度超出上限，当前上限：").ToString() + (object) Settings.Default.tempUpper3 + (Settings.Default.Language == 2 ? (object) ", current temp : " : (object) ",当前温度：") + PubMethod.data3);
+              this.startSend((Settings.Default.Language == 2 ? (object) "Outer tempe exceeds the upper limit, current upper limit :" : (object) "Наружная температура превышает верхний предел, текущий верхний предел:").ToString() + (object) Settings.Default.tempUpper3 + (Settings.Default.Language == 2 ? (object) ", current temp : " : (object) ", текущая температура:") + PubMethod.data3);
             this.playSound();
           }
           if (PubMethod.getCurveData(PubMethod.data3) < Settings.Default.tempLower3)
           {
-            stringBuilder.Append((Settings.Default.Language == 2 ? (object) "Outer temp below limit, current lower limit : " : (object) "外部温度低于限，当前下限：").ToString() + (object) Settings.Default.tempLower3 + ";");
+            stringBuilder.Append((Settings.Default.Language == 2 ? (object) "Outer temp below limit, current lower limit : " : (object) "Наружная температура ниже предела, текущий нижний предел:").ToString() + (object) Settings.Default.tempLower3 + ";");
             if (Settings.Default.SendType == 1)
-              this.startSend((Settings.Default.Language == 2 ? (object) "Outer temp below limit, current lower limit : " : (object) "外部温度低于限，当前下限：").ToString() + (object) Settings.Default.tempLower3 + (Settings.Default.Language == 2 ? (object) ", current temp : " : (object) ",当前温度：") + PubMethod.data3);
+              this.startSend((Settings.Default.Language == 2 ? (object) "Outer temp below limit, current lower limit : " : (object) "Наружная температура ниже предела, текущий нижний предел:").ToString() + (object) Settings.Default.tempLower3 + (Settings.Default.Language == 2 ? (object) ", current temp : " : (object) ", текущая температура:") + PubMethod.data3);
             this.playSound();
             break;
           }
@@ -1555,16 +1619,16 @@ namespace TEMPer
         case 4:
           if (PubMethod.getCurveData(PubMethod.data1) > Settings.Default.tempUpper1)
           {
-            stringBuilder.Append((Settings.Default.Language == 2 ? (object) "Inner temp exceeds upper limit, current upper limit : " : (object) "内部温度超出上限，当前上限：").ToString() + (object) Settings.Default.tempUpper1 + ";");
+            stringBuilder.Append((Settings.Default.Language == 2 ? (object) "Inner temp exceeds upper limit, current upper limit : " : (object) "Внутренняя температура превышает верхний предел, текущий верхний предел:").ToString() + (object) Settings.Default.tempUpper1 + ";");
             if (Settings.Default.SendType == 1)
-              this.startSend((Settings.Default.Language == 2 ? (object) "Inner temp exceeds upper limit, current upper limit : " : (object) "内部温度超出上限，当前上限：").ToString() + (object) Settings.Default.tempUpper1 + (Settings.Default.Language == 2 ? (object) ", current temp : " : (object) ",当前温度：") + PubMethod.data1);
+              this.startSend((Settings.Default.Language == 2 ? (object) "Inner temp exceeds upper limit, current upper limit : " : (object) "Внутренняя температура превышает верхний предел, текущий верхний предел:").ToString() + (object) Settings.Default.tempUpper1 + (Settings.Default.Language == 2 ? (object) ", current temp : " : (object) ", текущая температура:") + PubMethod.data1);
             this.playSound();
           }
           if (PubMethod.getCurveData(PubMethod.data1) < Settings.Default.tempLower1)
           {
-            stringBuilder.Append((Settings.Default.Language == 2 ? (object) "Inner temp below limit, current lower limit : " : (object) "内部温度低于限，当前下限：").ToString() + (object) Settings.Default.tempLower1 + ";");
+            stringBuilder.Append((Settings.Default.Language == 2 ? (object) "Inner temp below limit, current lower limit : " : (object) "Внутренняя температура ниже предела, текущий нижний предел:").ToString() + (object) Settings.Default.tempLower1 + ";");
             if (Settings.Default.SendType == 1)
-              this.startSend((Settings.Default.Language == 2 ? (object) "Inner temp below limit, current lower limit : " : (object) "内部温度低于限，当前下限：").ToString() + (object) Settings.Default.tempLower1 + (Settings.Default.Language == 2 ? (object) ", current temp : " : (object) ",当前温度：") + PubMethod.data1);
+              this.startSend((Settings.Default.Language == 2 ? (object) "Inner temp below limit, current lower limit : " : (object) "Внутренняя температура ниже предела, текущий нижний предел:").ToString() + (object) Settings.Default.tempLower1 + (Settings.Default.Language == 2 ? (object) ", current temp : " : (object) ", текущая температура:") + PubMethod.data1);
             this.playSound();
             break;
           }
@@ -1572,30 +1636,30 @@ namespace TEMPer
         case 5:
           if (PubMethod.getCurveData(PubMethod.data1) > Settings.Default.tempUpper1)
           {
-            stringBuilder.Append((Settings.Default.Language == 2 ? (object) "Inner temp exceeds upper limit, current upper limit : " : (object) "内部温度超出上限，当前上限：").ToString() + (object) Settings.Default.tempUpper1 + ";");
+            stringBuilder.Append((Settings.Default.Language == 2 ? (object) "Inner temp exceeds upper limit, current upper limit : " : (object) "Внутренняя температура превышает верхний предел, текущий верхний предел:").ToString() + (object) Settings.Default.tempUpper1 + ";");
             if (Settings.Default.SendType == 1)
-              this.startSend((Settings.Default.Language == 2 ? (object) "Inner temp exceeds upper limit, current upper limit : " : (object) "内部温度超出上限，当前上限：").ToString() + (object) Settings.Default.tempUpper1 + (Settings.Default.Language == 2 ? (object) ", current temp : " : (object) ",当前温度：") + PubMethod.data1);
+              this.startSend((Settings.Default.Language == 2 ? (object) "Inner temp exceeds upper limit, current upper limit : " : (object) "Внутренняя температура превышает верхний предел, текущий верхний предел:").ToString() + (object) Settings.Default.tempUpper1 + (Settings.Default.Language == 2 ? (object) ", current temp : " : (object) ", текущая температура:") + PubMethod.data1);
             this.playSound();
           }
           if (PubMethod.getCurveData(PubMethod.data1) < Settings.Default.tempLower1)
           {
-            stringBuilder.Append((Settings.Default.Language == 2 ? (object) "Inner temp below limit, current lower limit : " : (object) "内部温度低于限，当前下限：").ToString() + (object) Settings.Default.tempLower1 + ";");
+            stringBuilder.Append((Settings.Default.Language == 2 ? (object) "Inner temp below limit, current lower limit : " : (object) "Внутренняя температура ниже предела, текущий нижний предел:").ToString() + (object) Settings.Default.tempLower1 + ";");
             if (Settings.Default.SendType == 1)
-              this.startSend((Settings.Default.Language == 2 ? (object) "Inner temp below limit, current lower limit : " : (object) "内部温度低于限，当前下限：").ToString() + (object) Settings.Default.tempLower1 + (Settings.Default.Language == 2 ? (object) ", current temp : " : (object) ",当前温度：") + PubMethod.data1);
+              this.startSend((Settings.Default.Language == 2 ? (object) "Inner temp below limit, current lower limit : " : (object) "Внутренняя температура ниже предела, текущий нижний предел:").ToString() + (object) Settings.Default.tempLower1 + (Settings.Default.Language == 2 ? (object) ", current temp : " : (object) ", текущая температура:") + PubMethod.data1);
             this.playSound();
           }
           if (PubMethod.getCurveData(PubMethod.data2) > Settings.Default.tempUpper2)
           {
-            stringBuilder.Append((Settings.Default.Language == 2 ? (object) "Inner hum exceeds upper limit, current upper limit : " : (object) "内部湿度超出上限，当前上限：").ToString() + (object) Settings.Default.tempUpper2 + ";");
+            stringBuilder.Append((Settings.Default.Language == 2 ? (object) "Inner hum exceeds upper limit, current upper limit : " : (object) "Внутренняя влажность превышает верхний предел, текущий верхний предел:").ToString() + (object) Settings.Default.tempUpper2 + ";");
             if (Settings.Default.SendType == 1)
-              this.startSend((Settings.Default.Language == 2 ? (object) "Inner hum exceeds upper limit, current upper limit : " : (object) "内部湿度超出上限，当前上限：").ToString() + (object) Settings.Default.tempUpper2 + (Settings.Default.Language == 2 ? (object) ", current hum : " : (object) ",当前湿度：") + PubMethod.data2);
+              this.startSend((Settings.Default.Language == 2 ? (object) "Inner hum exceeds upper limit, current upper limit : " : (object) "Внутренняя влажность превышает верхний предел, текущий верхний предел:").ToString() + (object) Settings.Default.tempUpper2 + (Settings.Default.Language == 2 ? (object) ", current hum : " : (object) ", текущая влажность:") + PubMethod.data2);
             this.playSound();
           }
           if (PubMethod.getCurveData(PubMethod.data2) < Settings.Default.tempLower2)
           {
-            stringBuilder.Append((Settings.Default.Language == 2 ? (object) "Inner hum below limit, current lower limit : " : (object) "内部湿度低于限，当前下限：").ToString() + (object) Settings.Default.tempLower2 + ";");
+            stringBuilder.Append((Settings.Default.Language == 2 ? (object) "Inner hum below limit, current lower limit : " : (object) "Внутренняя влажность ниже предела, текущий нижний предел:").ToString() + (object) Settings.Default.tempLower2 + ";");
             if (Settings.Default.SendType == 1)
-              this.startSend((Settings.Default.Language == 2 ? (object) "Inner hum below limit, current lower limit : " : (object) "内部湿度低于限，当前下限：").ToString() + (object) Settings.Default.tempLower2 + (Settings.Default.Language == 2 ? (object) ", current hum : " : (object) ",当前湿度：") + PubMethod.data2);
+              this.startSend((Settings.Default.Language == 2 ? (object) "Inner hum below limit, current lower limit : " : (object) "Внутренняя влажность ниже предела, текущий нижний предел:").ToString() + (object) Settings.Default.tempLower2 + (Settings.Default.Language == 2 ? (object) ", current hum : " : (object) ", текущая влажность:") + PubMethod.data2);
             this.playSound();
             break;
           }
@@ -1605,32 +1669,32 @@ namespace TEMPer
           {
             if (PubMethod.getCurveData(PubMethod.data1) > Settings.Default.tempUpper1)
             {
-              stringBuilder.Append((Settings.Default.Language == 2 ? (object) "Inner temp exceeds upper limit, current upper limit : " : (object) "内部温度超出上限，当前上限：").ToString() + (object) Settings.Default.tempUpper1 + ";");
+              stringBuilder.Append((Settings.Default.Language == 2 ? (object) "Inner temp exceeds upper limit, current upper limit : " : (object) "Внутренняя температура превышает верхний предел, текущий верхний предел:").ToString() + (object) Settings.Default.tempUpper1 + ";");
               if (Settings.Default.SendType == 1)
-                this.startSend((Settings.Default.Language == 2 ? (object) "Inner temp exceeds upper limit, current upper limit : " : (object) "内部温度超出上限，当前上限：").ToString() + (object) Settings.Default.tempUpper1 + (Settings.Default.Language == 2 ? (object) ", current temp : " : (object) ",当前温度：") + PubMethod.data1);
+                this.startSend((Settings.Default.Language == 2 ? (object) "Inner temp exceeds upper limit, current upper limit : " : (object) "Внутренняя температура превышает верхний предел, текущий верхний предел:").ToString() + (object) Settings.Default.tempUpper1 + (Settings.Default.Language == 2 ? (object) ", current temp : " : (object) ", текущая температура:") + PubMethod.data1);
               this.playSound();
             }
             if (PubMethod.getCurveData(PubMethod.data1) < Settings.Default.tempLower1)
             {
-              stringBuilder.Append((Settings.Default.Language == 2 ? (object) "Inner temp below limit, current lower limit : " : (object) "内部温度低于限，当前下限：").ToString() + (object) Settings.Default.tempLower1 + ";");
+              stringBuilder.Append((Settings.Default.Language == 2 ? (object) "Inner temp below limit, current lower limit : " : (object) "Внутренняя температура ниже предела, текущий нижний предел:").ToString() + (object) Settings.Default.tempLower1 + ";");
               if (Settings.Default.SendType == 1)
-                this.startSend((Settings.Default.Language == 2 ? (object) "Inner temp below limit, current lower limit : " : (object) "内部温度低于限，当前下限：").ToString() + (object) Settings.Default.tempLower1 + (Settings.Default.Language == 2 ? (object) ", current temp : " : (object) ",当前温度：") + PubMethod.data1);
+                this.startSend((Settings.Default.Language == 2 ? (object) "Inner temp below limit, current lower limit : " : (object) "Внутренняя температура ниже предела, текущий нижний предел:").ToString() + (object) Settings.Default.tempLower1 + (Settings.Default.Language == 2 ? (object) ", current temp : " : (object) ", текущая температура:") + PubMethod.data1);
               this.playSound();
             }
             if (PubMethod.innerSensor == 64)
             {
               if (PubMethod.getCurveData(PubMethod.data2) > Settings.Default.tempUpper2)
               {
-                stringBuilder.Append((Settings.Default.Language == 2 ? (object) "Inner hum exceeds upper limit, current upper limit : " : (object) "内部湿度超出上限，当前上限：").ToString() + (object) Settings.Default.tempUpper2 + ";");
+                stringBuilder.Append((Settings.Default.Language == 2 ? (object) "Inner hum exceeds upper limit, current upper limit : " : (object) "Внутренняя влажность превышает верхний предел, текущий верхний предел:").ToString() + (object) Settings.Default.tempUpper2 + ";");
                 if (Settings.Default.SendType == 1)
-                  this.startSend((Settings.Default.Language == 2 ? (object) "Inner hum exceeds upper limit, current upper limit : " : (object) "内部湿度超出上限，当前上限：").ToString() + (object) Settings.Default.tempUpper2 + (Settings.Default.Language == 2 ? (object) ", current hum : " : (object) ",当前湿度：") + PubMethod.data2);
+                  this.startSend((Settings.Default.Language == 2 ? (object) "Inner hum exceeds upper limit, current upper limit : " : (object) "Внутренняя влажность превышает верхний предел, текущий верхний предел:").ToString() + (object) Settings.Default.tempUpper2 + (Settings.Default.Language == 2 ? (object) ", current hum : " : (object) ", текущая влажность:") + PubMethod.data2);
                 this.playSound();
               }
               if (PubMethod.getCurveData(PubMethod.data2) < Settings.Default.tempLower2)
               {
-                stringBuilder.Append((Settings.Default.Language == 2 ? (object) "Inner hum below limit, current lower limit : " : (object) "内部湿度低于限，当前下限：").ToString() + (object) Settings.Default.tempLower2 + ";");
+                stringBuilder.Append((Settings.Default.Language == 2 ? (object) "Inner hum below limit, current lower limit : " : (object) "Внутренняя влажность ниже предела, текущий нижний предел:").ToString() + (object) Settings.Default.tempLower2 + ";");
                 if (Settings.Default.SendType == 1)
-                  this.startSend((Settings.Default.Language == 2 ? (object) "Inner hum below limit, current lower limit : " : (object) "内部湿度低于限，当前下限：").ToString() + (object) Settings.Default.tempLower2 + (Settings.Default.Language == 2 ? (object) ", current hum : " : (object) ",当前湿度：") + PubMethod.data2);
+                  this.startSend((Settings.Default.Language == 2 ? (object) "Inner hum below limit, current lower limit : " : (object) "Внутренняя влажность ниже предела, текущий нижний предел:").ToString() + (object) Settings.Default.tempLower2 + (Settings.Default.Language == 2 ? (object) ", current hum : " : (object) ", текущая влажность:") + PubMethod.data2);
                 this.playSound();
               }
             }
@@ -1639,32 +1703,32 @@ namespace TEMPer
           {
             if (PubMethod.getCurveData(PubMethod.data3) > Settings.Default.tempUpper3)
             {
-              stringBuilder.Append((Settings.Default.Language == 2 ? (object) "Outer tempe exceeds the upper limit, current upper limit : " : (object) "外部温度超出上限，当前上限：").ToString() + (object) Settings.Default.tempUpper3 + ";");
+              stringBuilder.Append((Settings.Default.Language == 2 ? (object) "Outer tempe exceeds the upper limit, current upper limit : " : (object) "Наружная температура превышает верхний предел, текущий верхний предел:").ToString() + (object) Settings.Default.tempUpper3 + ";");
               if (Settings.Default.SendType == 1)
-                this.startSend((Settings.Default.Language == 2 ? "Outer tempe exceeds the upper limit, current upper limit : " : "外部温度超出上限，当前上限：") + (Settings.Default.tempUpper3 + (double) Settings.Default.Language == 2.0 ? ", current temp : " : ",当前温度：") + PubMethod.data3);
+                this.startSend((Settings.Default.Language == 2 ? "Outer tempe exceeds the upper limit, current upper limit : " : "Наружная температура превышает верхний предел, текущий верхний предел:") + (Settings.Default.tempUpper3 + (double) Settings.Default.Language == 2.0 ? ", current temp : " : ", текущая температура:") + PubMethod.data3);
               this.playSound();
             }
             if (PubMethod.getCurveData(PubMethod.data3) < Settings.Default.tempLower3)
             {
-              stringBuilder.Append((Settings.Default.Language == 2 ? (object) "Outer temp below limit, current lower limit : " : (object) "外部温度低于限，当前下限：").ToString() + (object) Settings.Default.tempLower3 + ";");
+              stringBuilder.Append((Settings.Default.Language == 2 ? (object) "Outer temp below limit, current lower limit : " : (object) "Наружная температура ниже предела, текущий нижний предел:").ToString() + (object) Settings.Default.tempLower3 + ";");
               if (Settings.Default.SendType == 1)
-                this.startSend((Settings.Default.Language == 2 ? (object) "Outer temp below limit, current lower limit : " : (object) "外部温度低于限，当前下限：").ToString() + (object) Settings.Default.tempLower3 + (Settings.Default.Language == 2 ? (object) ", current temp : " : (object) ",当前温度：") + PubMethod.data3);
+                this.startSend((Settings.Default.Language == 2 ? (object) "Outer temp below limit, current lower limit : " : (object) "Наружная температура ниже предела, текущий нижний предел:").ToString() + (object) Settings.Default.tempLower3 + (Settings.Default.Language == 2 ? (object) ", current temp : " : (object) ", текущая температура:") + PubMethod.data3);
               this.playSound();
             }
             if (PubMethod.outerSensor == 4)
             {
               if (PubMethod.getCurveData(PubMethod.data4) > Settings.Default.tempUpper4)
               {
-                stringBuilder.Append((Settings.Default.Language == 2 ? (object) "Outer hum exceeds the upper limit, current upper limit : " : (object) "外部湿度超出上限，当前上限：").ToString() + (object) Settings.Default.tempUpper4 + ";");
+                stringBuilder.Append((Settings.Default.Language == 2 ? (object) "Outer hum exceeds the upper limit, current upper limit : " : (object) "Внешняя влажность превышает верхний предел, текущий верхний предел:").ToString() + (object) Settings.Default.tempUpper4 + ";");
                 if (Settings.Default.SendType == 1)
-                  this.startSend((Settings.Default.Language == 2 ? (object) "Outer hum exceeds the upper limit, current upper limit : " : (object) "外部湿度超出上限，当前上限：").ToString() + (object) Settings.Default.tempUpper4 + (Settings.Default.Language == 2 ? (object) ", current hum : " : (object) ",当前湿度：") + PubMethod.data4);
+                  this.startSend((Settings.Default.Language == 2 ? (object) "Outer hum exceeds the upper limit, current upper limit : " : (object) "Внешняя влажность превышает верхний предел, текущий верхний предел:").ToString() + (object) Settings.Default.tempUpper4 + (Settings.Default.Language == 2 ? (object) ", current hum : " : (object) ",当前湿度：") + PubMethod.data4);
                 this.playSound();
               }
               if (PubMethod.getCurveData(PubMethod.data4) < Settings.Default.tempLower4)
               {
-                stringBuilder.Append((Settings.Default.Language == 2 ? (object) "Outer hum below limit, current lower limit : " : (object) "外部湿度低于限，当前下限：").ToString() + (object) Settings.Default.tempLower4 + ";");
+                stringBuilder.Append((Settings.Default.Language == 2 ? (object) "Outer hum below limit, current lower limit : " : (object) "Внешняя влажность ниже лимита, текущий нижний предел:").ToString() + (object) Settings.Default.tempLower4 + ";");
                 if (Settings.Default.SendType == 1)
-                  this.startSend((Settings.Default.Language == 2 ? (object) "Outer hum below limit, current lower limit : " : (object) "外部湿度低于限，当前下限：").ToString() + (object) Settings.Default.tempLower4 + (Settings.Default.Language == 2 ? (object) ", current hum : " : (object) ",当前湿度：") + PubMethod.data4);
+                  this.startSend((Settings.Default.Language == 2 ? (object) "Outer hum below limit, current lower limit : " : (object) "Внешняя влажность ниже лимита, текущий нижний предел:").ToString() + (object) Settings.Default.tempLower4 + (Settings.Default.Language == 2 ? (object) ", current hum : " : (object) ", текущая влажность:") + PubMethod.data4);
                 this.playSound();
               }
             }
@@ -1906,7 +1970,7 @@ namespace TEMPer
             ++mainForm.isureMailCount;
             if (mainForm.isureMailCount > 1)
               return;
-            mainForm.reportEmailIssure((Settings.Default.Language == 2 ? "detail to see: " : "具体原因") + ex.ToString());
+            mainForm.reportEmailIssure((Settings.Default.Language == 2 ? "detail to see: " : "Детали ошибки: ") + ex.ToString());
           }));
         }
         finally
@@ -1937,8 +2001,8 @@ namespace TEMPer
       smtpClient.Credentials = (ICredentialsByHost) new NetworkCredential(from, pas);
       string address = from;
       string addresses = to;
-      string str1 = "你抢了我名字，那这个号做测试，哈哈哈哈哈";
-      string str2 = "测试邮件内容5";
+      string str1 = "Вы украли мое имя, затем этот номер для тестирования, хахахахаха";
+      string str2 = "Проверить содержание письма 5";
       MailMessage message = new MailMessage();
       message.From = new MailAddress(address, "xyf");
       message.To.Add(addresses);
@@ -1950,20 +2014,20 @@ namespace TEMPer
       try
       {
         smtpClient.Send(message);
-        Console.WriteLine("发送成功");
+        Console.WriteLine("Успешно отправлено");
         int num = (int) MessageBox.Show("Success");
       }
       catch (SmtpException ex)
       {
         int num1 = (int) MessageBox.Show(ex.Message);
         int num2 = (int) MessageBox.Show(ex.StackTrace);
-        Console.WriteLine(ex.Message, (object) "发送邮件出错");
+        Console.WriteLine(ex.Message, (object)"Ошибка отправки почты");
       }
     }
 
     private void reportEmailIssure(string issure)
     {
-      int num1 = (int) MessageBox.Show(Settings.Default.Language == 2 ? "fail to send email " : "发送邮件失败！");
+      int num1 = (int) MessageBox.Show(Settings.Default.Language == 2 ? "fail to send email " : "Не удалось отправить почту!");
       int num2 = (int) MessageBox.Show(issure);
     }
 
@@ -2098,7 +2162,7 @@ namespace TEMPer
                   this.rf.Close();
                 }));
               this.getVersion();
-              int num = (int) MessageBox.Show(Settings.Default.Language == 2 ? "End of the search" : "搜索结束");
+              int num = (int) MessageBox.Show(Settings.Default.Language == 2 ? "End of the search" : "Конец поиска");
             }));
         }
         catch
@@ -2140,7 +2204,7 @@ namespace TEMPer
       else
       {
         this.Hide();
-        this.notifyIcon1.ShowBalloonTip(1000, " ", Settings.Default.Language == 2 ? "The interface is hidden to the tray" : "界面隐藏到托盘", ToolTipIcon.None);
+        this.notifyIcon1.ShowBalloonTip(1000, " ", Settings.Default.Language == 2 ? "The interface is hidden to the tray" : "Интерфейс скрыт в трее", ToolTipIcon.None);
       }
     }
 

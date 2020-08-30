@@ -26,7 +26,7 @@ namespace TEMPer.Properties
       }
     }
 
-    [DefaultSettingValue("D:\\用户目录\\我的文档\\PCsensor\\Data")]
+    [DefaultSettingValue("D:\\PCsensor\\Data")]
     [DebuggerNonUserCode]
     [UserScopedSetting]
     public string FilePath

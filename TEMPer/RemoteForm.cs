@@ -189,13 +189,13 @@ namespace TEMPer
       {
         if (PubMethod.isOpen)
         {
-          this.loginBtn.Text = Settings.Default.Language == 2 ? "Uploading..." : "上传中...";
+          this.loginBtn.Text = Settings.Default.Language == 2 ? "Uploading..." : "Загрузка...";
           new Thread(new ThreadStart(this.mf.uploadDevice)).Start();
         }
         else
         {
           new Thread(new ThreadStart(this.mf.searchDevice)).Start();
-          this.loginBtn.Text = Settings.Default.Language == 2 ? "Searching..." : "搜索中...";
+          this.loginBtn.Text = Settings.Default.Language == 2 ? "Searching..." : "Поиск...";
         }
         this.loginBtn.Enabled = false;
         this.exitBtn.Enabled = false;
@@ -206,7 +206,7 @@ namespace TEMPer
         string text2 = this.passTB.Text;
         if (string.IsNullOrEmpty(text1) || string.IsNullOrEmpty(text2))
         {
-          int num = (int) MessageBox.Show(Settings.Default.Language == 2 ? "Noy null" : "不能为空");
+          int num = (int) MessageBox.Show(Settings.Default.Language == 2 ? "Noy null" : "Не может быть пустым");
         }
         else
         {
@@ -214,7 +214,7 @@ namespace TEMPer
           this.passTB.ReadOnly = true;
           this.panel2.BackColor = this.accountTB.BackColor;
           this.panel3.BackColor = this.passTB.BackColor;
-          this.loginBtn.Text = Settings.Default.Language == 2 ? "Loging.." : "登录中...";
+          this.loginBtn.Text = Settings.Default.Language == 2 ? "Loging.." : "Загрузка...";
           this.loginBtn.Enabled = false;
           new Thread(new ParameterizedThreadStart(this.login))
           {
@@ -254,7 +254,7 @@ namespace TEMPer
       }
       else if (str == ProtocolLoginKey.Error.ToString())
       {
-        int num = (int) MessageBox.Show(Settings.Default.Language == 2 ? "Please submit the correct information!" : "请提交正确信息!");
+        int num = (int) MessageBox.Show(Settings.Default.Language == 2 ? "Please submit the correct information!" : "Пожалуйста, отправьте правильную информацию!");
         this.backUnLogin();
       }
       else if (str == ProtocolLoginKey.Success.ToString())
@@ -270,22 +270,22 @@ namespace TEMPer
           PubMethod.loginName = logs[0];
           PubMethod.loginPass = logs[1];
           PubMethod.isLogin = true;
-          this.mf.changeRemote(Settings.Default.Language == 2 ? "Remote state : ON" : "当前远程状态：开启");
+          this.mf.changeRemote(Settings.Default.Language == 2 ? "Remote state : ON" : "Текущий удаленный статус: включен");
           this.loginSuccess();
         }));
       else if (str == ProtocolLoginKey.PwdError.ToString())
       {
-        int num = (int) MessageBox.Show(Settings.Default.Language == 2 ? "The user name or password error!" : "用户名或密码错误!");
+        int num = (int) MessageBox.Show(Settings.Default.Language == 2 ? "The user name or password error!" : "Неправильное имя пользователя или пароль!");
         this.backUnLogin();
       }
       else if (str == ProtocolLoginKey.NoExist.ToString())
       {
-        int num = (int) MessageBox.Show(Settings.Default.Language == 2 ? "User name does not exist!" : "用户名不存在!");
+        int num = (int) MessageBox.Show(Settings.Default.Language == 2 ? "User name does not exist!" : "Имя пользователя не существует!");
         this.backUnLogin();
       }
       else
       {
-        int num = (int) MessageBox.Show(Settings.Default.Language == 2 ? "Connect to the server error!" : "连接服务器错误!");
+        int num = (int) MessageBox.Show(Settings.Default.Language == 2 ? "Connect to the server error!" : "Ошибка сервера подключения!");
         this.backUnLogin();
       }
     }
@@ -297,7 +297,7 @@ namespace TEMPer
       this.panel2.BackColor = Color.White;
       this.panel3.BackColor = Color.White;
       this.loginBtn.Enabled = true;
-      this.loginBtn.Text = Settings.Default.Language == 2 ? "Login" : "登录";
+      this.loginBtn.Text = Settings.Default.Language == 2 ? "Login" : "Логин";
     }));
 
     private void remberCkb_Click(object sender, EventArgs e)
@@ -313,9 +313,9 @@ namespace TEMPer
         this.passTB.Text = Settings.Default.PassWord;
       }
       if (PubMethod.isOpen)
-        this.tipLabel.Text = Settings.Default.Language == 2 ? "Detected that you have connected the device \n and upload the device to the server?" : "检测到您已经连接设备，是否将设备上传到服务器？";
+        this.tipLabel.Text = Settings.Default.Language == 2 ? "Detected that you have connected the device \n and upload the device to the server?" : "Обнаружено, что вы подключены к устройству, вы хотите загрузить устройство на сервер?";
       else
-        this.tipLabel.Text = Settings.Default.Language == 2 ? "Did not detect your connection device,\n do you search the equipment on the server?" : "未检测到您连接设备，是否搜索服务器上的设备？";
+        this.tipLabel.Text = Settings.Default.Language == 2 ? "Did not detect your connection device,\n do you search the equipment on the server?" : "Ваше подключенное устройство не обнаружено. Вы ищете устройства на сервере?";
       if (!PubMethod.isLogin)
         return;
       this.loginSuccess();
@@ -335,9 +335,9 @@ namespace TEMPer
       this.loginNameLabel.Visible = true;
       this.tipLabel.Visible = true;
       if (PubMethod.isOpen)
-        this.loginBtn.Text = Settings.Default.Language == 2 ? "Upload" : "开始上传";
+        this.loginBtn.Text = Settings.Default.Language == 2 ? "Upload" : "Загрузка";
       else
-        this.loginBtn.Text = Settings.Default.Language == 2 ? "Search" : "开始搜索";
+        this.loginBtn.Text = Settings.Default.Language == 2 ? "Search" : "Поиск";
       this.loginBtn.Enabled = true;
       this.exitBtn.Visible = true;
     }
@@ -363,7 +363,7 @@ namespace TEMPer
       this.loginNameLabel.Text = "";
       this.loginNameLabel.Visible = false;
       this.tipLabel.Visible = false;
-      this.loginBtn.Text = Settings.Default.Language == 2 ? "Login" : "登录";
+      this.loginBtn.Text = Settings.Default.Language == 2 ? "Login" : "Логин";
       this.loginBtn.Enabled = true;
       this.exitBtn.Visible = false;
       this.accountTB.Text = "";
@@ -371,7 +371,7 @@ namespace TEMPer
       PubMethod.isLogin = false;
       PubMethod.loginName = "";
       PubMethod.loginPass = "";
-      this.mf.changeRemote(Settings.Default.Language == 2 ? "Remote state : OFF" : "当前远程状态：关闭");
+      this.mf.changeRemote(Settings.Default.Language == 2 ? "Remote state : OFF" : "Текущий удаленный статус: выключен");
     }
   }
 }
