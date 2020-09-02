@@ -19,4 +19,9 @@ namespace TEMPer
       Application.Run((Form) new MainForm());
     }
   }
+
+  static class DataNemaFile
+  {
+    public static string NumberOfFile { get; set; }
+  }
 }

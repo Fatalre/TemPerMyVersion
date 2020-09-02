@@ -820,8 +820,7 @@
     <value>20, 68</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
-    <value>φ.датчика
-</value>
+    <value>φ.датчика</value>
   </data>
   <data name="dataAvg4.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -842,8 +841,7 @@
     <value>Flat</value>
   </data>
   <data name="label3.Text" xml:space="preserve">
-    <value>Т.вн.датчика
-</value>
+    <value>Т.вн.датчика</value>
   </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
     <value>20, 68</value>
@@ -3002,5 +3000,8 @@
   </data>
   <data name="label11.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
+  </data>
+  <data name="label23.Text" xml:space="preserve">
+    <value />
   </data>
 </root>

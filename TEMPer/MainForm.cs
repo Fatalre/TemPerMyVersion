@@ -15,6 +15,7 @@ using System.Windows.Forms.Layout;
 using TEMPer.Properties;
 using System.Management;
 using System.Collections.Generic;
+using System.IO.Ports;
 
 namespace TEMPer
 {
@@ -183,7 +184,6 @@ namespace TEMPer
     private RemoteForm rf;
     private string NamePwd;
     Boolean NeedToDevice = true;
-    int temp;
 
     protected override void Dispose(bool disposing)
     {
@@ -684,10 +684,44 @@ namespace TEMPer
       this.contextMenuStrip1.ResumeLayout(false);
       this.ResumeLayout(false);
     }
+        string OurDeviceId = "";
 
     public MainForm()
     {
+            List<string> DeviceIdList1 = new List<string>();
+            List<string> DeviceIdList2 = new List<string>();
+            int o = 0, p = 0;
+
+            var usbDevices = GetUSBDevices();
+
+            for (o = 0; o < usbDevices.Count; o++)
+            {
+                DeviceIdList1.Add(Convert.ToString(usbDevices[o].DeviceID));
+            }
+            String[] DeviceId1Arr = DeviceIdList1.ToArray();
+
+            Connect_USB_device f = new Connect_USB_device();
+            f.ShowDialog();
+
+            var usbDevices1 = GetUSBDevices();
+            for (o = 0; o < usbDevices1.Count; o++)
+            {
+                DeviceIdList2.Add(Convert.ToString(usbDevices1[o].DeviceID));
+            }
+            String[] DeviceId2Arr = DeviceIdList2.ToArray();
+
+            /*for (o = 0; o < DeviceId2Arr.Length-1; o++)
+            {
+                if (DeviceId2Arr[p] != DeviceId1Arr[o])
+                {
+                    OurDeviceId = DeviceId2Arr[p];
+                }
+                p++;
+            }*/
+            OurDeviceId = DeviceId2Arr[0];
+
       this.setLanguage();
+
       try
       {
         this.InitializeComponent();
@@ -698,7 +732,7 @@ namespace TEMPer
         int num2 = (int) MessageBox.Show(ex.StackTrace);
       }
             //this.InitializeComponent();
-        }
+    }
 
     public void setLanguage()
     {
@@ -816,10 +850,16 @@ namespace TEMPer
     }
 
     private void titlePanel_MouseDown(object sender, MouseEventArgs e) => this.myPoint = new Point(-e.X, -e.Y);
-
+        
+        int rt = 0;// ЭТО ТУТ
     private void timer_Tick(object sender, EventArgs e)
     {
-      PubMethod.isOpen = this.openDevice();
+            if (rt == 0)
+            {
+                PubMethod.isOpen = this.openDevice();
+                rt++;
+            }
+      
       if (PubMethod.isOpen && string.IsNullOrEmpty(PubMethod.version))
       {
         this.isStartRead = false;
@@ -843,65 +883,83 @@ namespace TEMPer
       ++this.timeIndex;
     }
 
-        static List<USBDeviceInfo> GetUSBDevices()
-        {
-            List<USBDeviceInfo> devices = new List<USBDeviceInfo>();
-
-            ManagementObjectCollection collection;
-            using (var searcher = new ManagementObjectSearcher(@"Select * From Win32_USBHub"))
-                collection = searcher.Get();
-
-            foreach (var device in collection)
-            {
-                devices.Add(new USBDeviceInfo(
-                (string)device.GetPropertyValue("DeviceID"),
-                (string)device.GetPropertyValue("PNPDeviceID"),
-                (string)device.GetPropertyValue("Description")
-                ));
-            }
-
-            collection.Dispose();
-            return devices;
-        }
-
-        class USBDeviceInfo
-        {
-            public USBDeviceInfo(string deviceID, string pnpDeviceID, string description)
-            {
-                this.DeviceID = deviceID;
-                this.PnpDeviceID = pnpDeviceID;
-                this.Description = description;
-            }
-            public string DeviceID { get; private set; }
-            public string PnpDeviceID { get; private set; }
-            public string Description { get; private set; }
-        }
-
-        private bool openDevice()
+    public class USBDeviceInfo
     {
-            if (NeedToDevice == true)
-            {
-                var usbDevices = GetUSBDevices();
-                for (int index1 = 0; index1 < MainForm.pids.Length; ++index1)
-                {
-                    for (int index2 = 0; index2 < MainForm.vids.Length; ++index2)
-                    { 
-                        PubMethod.pDevice = RDing.OpenUSBDevice(MainForm.vids[index2], MainForm.pids[index1]);
-                        if (PubMethod.pDevice.ToInt32() != -1)
-                        {
+    public String DeviceID { get; set; }
+    public String Name { get; set; }
+    public String Status { get; set; }
+    }
+   
+    public static List<USBDeviceInfo> GetUSBDevices()
+    {
+    ManagementObjectSearcher searcher = new ManagementObjectSearcher(@"Select * From Win32_USBHub");
+    ManagementObjectCollection collection = searcher.Get();
 
-                            PubMethod.inputLength = RDing.GetInputLength(PubMethod.pDevice);
-                            PubMethod.outputLength = RDing.GetOutputLength(PubMethod.pDevice);
-                            return PubMethod.inputLength != (ushort)9 || PubMethod.outputLength != (ushort)9 || true;
-                        }
+    List<USBDeviceInfo> devices = new List<USBDeviceInfo>();
+    foreach (var device in collection)
+    {
+        USBDeviceInfo deviceInfo = new USBDeviceInfo();
+        deviceInfo.DeviceID = (String)device.GetPropertyValue("DeviceID");
+        deviceInfo.Name = (String)device.GetPropertyValue("Name");
+        deviceInfo.Status = (String)device.GetPropertyValue("Status");
+        devices.Add(deviceInfo);
+    }
+
+    collection.Dispose();
+    searcher.Dispose();
+    return devices;
+    }
+    private bool openDevice()
+    {
+      if (NeedToDevice == true)
+      {
+       var usbDevices = GetUSBDevices();
+
+                /*try
+                {
+                    string ComputerName = "localhost";
+                    ManagementScope Scope;
+                    Scope = new ManagementScope(String.Format("\\\\{0}\\root\\CIMV2", ComputerName), null);
+
+                    Scope.Connect();
+                    ObjectQuery Query = new ObjectQuery("SELECT * FROM Win32_PnPSignedDriver");
+                    ManagementObjectSearcher Searcher = new ManagementObjectSearcher(Scope, Query);
+
+                    List<string> DeviceLocation = new List<string>();
+                    List<string> DeviceID = new List<string>();
+
+                    foreach (ManagementObject WmiObject in Searcher.Get())
+                    {
+
+                        DeviceLocation.Add(Convert.ToString(WmiObject["Location"]));
+                        DeviceID.Add(Convert.ToString(WmiObject["DeviceID"]));
                     }
                 }
-                return false;
-            }
-            else
+                catch (Exception e)
+                {
+                    MessageBox.Show(e.ToString());
+                }//Получение ID всех устройств в системе (локация, ID) НЕ ИСПОЛЬЗУЕТСЯ*/
+
+        for (int index1 = 0; index1 < MainForm.pids.Length; ++index1)
+        {
+          for (int index2 = 0; index2 < MainForm.vids.Length; ++index2)
+          { 
+                        //
+           PubMethod.pDevice = RDing.OpenUSBDevice(MainForm.vids[index2], MainForm.pids[index1]);
+            if (PubMethod.pDevice.ToInt32() != -1)
             {
-                return false;
+             PubMethod.inputLength = RDing.GetInputLength(PubMethod.pDevice);
+             PubMethod.outputLength = RDing.GetOutputLength(PubMethod.pDevice);
+             return PubMethod.inputLength != (ushort)9 || PubMethod.outputLength != (ushort)9 || true;
             }
+          }
+        }
+        return false;
+      }
+      else
+      {
+       return false;
+      }
     }
 
     private void getVersion()
@@ -1721,7 +1779,7 @@ namespace TEMPer
               {
                 stringBuilder.Append((Settings.Default.Language == 2 ? (object) "Outer hum exceeds the upper limit, current upper limit : " : (object) "Внешняя влажность превышает верхний предел, текущий верхний предел:").ToString() + (object) Settings.Default.tempUpper4 + ";");
                 if (Settings.Default.SendType == 1)
-                  this.startSend((Settings.Default.Language == 2 ? (object) "Outer hum exceeds the upper limit, current upper limit : " : (object) "Внешняя влажность превышает верхний предел, текущий верхний предел:").ToString() + (object) Settings.Default.tempUpper4 + (Settings.Default.Language == 2 ? (object) ", current hum : " : (object) ",当前湿度：") + PubMethod.data4);
+                  this.startSend((Settings.Default.Language == 2 ? (object) "Outer hum exceeds the upper limit, current upper limit : " : (object) "Внешняя влажность превышает верхний предел, текущий верхний предел:").ToString() + (object) Settings.Default.tempUpper4 + (Settings.Default.Language == 2 ? (object) ", current hum : " : (object) ", текущая влажность:") + PubMethod.data4);
                 this.playSound();
               }
               if (PubMethod.getCurveData(PubMethod.data4) < Settings.Default.tempLower4)
@@ -1811,31 +1869,31 @@ namespace TEMPer
       {
         case 1:
           str1 = PubMethod.getTime() + "," + stringDouble3 + "," + stringDouble4;
-          str2 = "TEMPer1F_H1";
+          str2 = "TEMPer1F_H1" + DataNemaFile.NumberOfFile;
           str3 = "Time,Temperature,Humidity\n";
           break;
         case 2:
           str1 = PubMethod.getTime() + "," + stringDouble1;
-          str2 = "TEMPer1F";
+          str2 = "TEMPer1F" + DataNemaFile.NumberOfFile;
           str3 = "Time,Temperature\n";
           break;
         case 3:
           str1 = PubMethod.getTime() + "," + stringDouble1 + "," + stringDouble3;
-          str2 = "TEMPer2";
+          str2 = "TEMPer2" + DataNemaFile.NumberOfFile;
           str3 = "Time,Inner Temperature,Outer Temperature\n";
           break;
         case 4:
           str1 = PubMethod.getTime() + "," + stringDouble1;
-          str2 = "TEMPerGold";
+          str2 = "TEMPerGold" + DataNemaFile.NumberOfFile;
           str3 = "Time,Temperature\n";
           break;
         case 5:
           str1 = PubMethod.getTime() + "," + stringDouble1 + "," + stringDouble2;
-          str2 = "TEMPerHUM";
+          str2 = "TEMPerHUM" + DataNemaFile.NumberOfFile;
           str3 = "Time,Temperature,Humidity\n";
           break;
         case 6:
-          str2 = "TEMPerX";
+          str2 = "TEMPerX" + DataNemaFile.NumberOfFile;
           str1 = PubMethod.getTime() + ",";
           string str4 = "Time,";
           if (PubMethod.innerSensor > 0)
@@ -1983,6 +2041,7 @@ namespace TEMPer
       }
       catch (Exception ex)
       {
+                MessageBox.Show(ex.ToString());
       }
     }
 
@@ -2112,6 +2171,7 @@ namespace TEMPer
       }
       catch (SocketException ex)
       {
+                MessageBox.Show(ex.ToString());
       }
     }
 
@@ -2210,9 +2270,11 @@ namespace TEMPer
 
     private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
     {
-      if (Settings.Default.CloseOperate != 2)
-        ;
-    }
+            if (Settings.Default.CloseOperate != 2)
+            {
+                ;
+            }
+        }
 
     private void notifyIcon1_DoubleClick(object sender, EventArgs e) => this.Visible = true;
 

@@ -7,6 +7,7 @@
 using System;
 using System.Security.Cryptography;
 using System.Text;
+using System.Windows.Forms;
 
 namespace TEMPer
 {
@@ -41,6 +42,7 @@ namespace TEMPer
       }
       catch (Exception ex)
       {
+                MessageBox.Show(ex.ToString());
       }
       return str;
     }
